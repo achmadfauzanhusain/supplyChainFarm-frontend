@@ -11,7 +11,7 @@ const DetailProduct = () => {
     return (
         <div className="mt-10 md:mt-18 px-2 sm:px-8 lg:px-18 pb-8">
             <button className="cursor-pointer" onClick={() => router.back()}>
-                <Image src="/icon/back.png" width={30} height={0} />
+                <Image className="w-[25px] md:w-[30px]" src="/icon/back.png" width={30} height={0} />
             </button>
 
             <div className="flex justify-between items-center mt-8">

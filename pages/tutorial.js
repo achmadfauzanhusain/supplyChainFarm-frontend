@@ -9,7 +9,7 @@ const Tutorial = () => {
     return (
         <div className="mt-10 md:mt-18 px-4 sm:px-8 lg:px-18 pb-24">
             <Link href="/register">
-                <Image src="/icon/back.png" width={30} height={0} />
+                <Image className="w-[25px] md:w-[30px]" src="/icon/back.png" width={30} height={0} />
             </Link>
             <div className="">
                 <Image className="mx-auto" src="/icon/metamask.png" width={300} height={0} />

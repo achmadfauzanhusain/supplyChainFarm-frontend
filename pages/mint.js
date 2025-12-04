@@ -8,7 +8,7 @@ const Mint = () => {
     return (
         <div className="mt-18 px-2 sm:px-4 md:px-8 lg:px-18 pb-14">
             <Link href="/">
-                <Image src="/icon/back.png" width={30} height={0} />
+                <Image className="w-[25px] md:w-[30px]" src="/icon/back.png" width={30} height={0} />
             </Link>
 
             <h1 className={`${urbanist.className} text-3xl sm:text-4xl md:text-5xl font-[1000] mt-10`}><span className="bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent">I Want to make My</span><br /> Product Decentralized</h1>

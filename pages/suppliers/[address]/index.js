@@ -11,7 +11,7 @@ const Supplier = () => {
     return (
         <div className="mt-10 md:mt-18 px-5 md:px-8 lg:px-18">
             <button className="cursor-pointer" onClick={() => router.back()}>
-                <Image src="/icon/back.png" width={30} height={0} />
+                <Image className="w-[25px] md:w-[30px]" src="/icon/back.png" width={30} height={0} />
             </button>
 
             <h1 className={`${urbanist.className} text-3xl sm:text-4xl md:text-5xl font-bold mt-8`}>PT KOPI INDONESIA</h1>

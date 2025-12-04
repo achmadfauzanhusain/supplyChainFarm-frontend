@@ -9,7 +9,7 @@ const Register = () => {
     return (
         <div className="mt-10 md:mt-18 px-4 sm:px-8 lg:px-18 pb-14">
             <Link href="/">
-                <Image src="/icon/back.png" width={30} height={0} />
+                <Image className="w-[25px] md:w-[30px]" src="/icon/back.png" width={30} height={0} />
             </Link>
             
             <h1 className={`${urbanist.className} mt-8 text-3xl md:text-4xl font-[1000]`}><span className="bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent">Register your wallet to</span> <br /> become a supplier</h1>
