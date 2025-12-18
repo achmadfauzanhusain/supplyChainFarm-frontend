@@ -26,8 +26,12 @@ const Register = () => {
                     className="text-lg md:text-2xl border-b px-3 py-4 font-semibold outline-none"
                     placeholder="ETH Wallet Address" 
                 />
+                <input
+                    className="text-lg md:text-2xl border-b px-3 py-4 font-semibold outline-none"
+                    placeholder="Supplier Name" 
+                />
             </div>
-            <button className="w-full text-xs mt-6 py-4 relative cursor-pointer transition-all duration-300 px-6 rounded-lg text-white
+            <button className="w-full text-xs mt-6 py-4 relative cursor-pointer transition-all duration-300 px-6 rounded-md text-white
                 bg-linear-to-r from-[#0D6EFD] to-blue-600
                 shadow-inner overflow-hidden
                 hover:from-blue-400 hover:to-blue-500
