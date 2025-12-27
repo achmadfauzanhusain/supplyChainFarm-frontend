@@ -1,8 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
+import { useRouter } from "next/router"
 
 import { Urbanist } from "next/font/google"
+import { registerSupplier } from "@/services/supplier"
 
 const urbanist = Urbanist({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] })
 
@@ -12,9 +14,13 @@ const Register = () => {
     const [walletAddress, setWalletAddress] = useState("")
     const [supplierEmail, setSupplierEmail] = useState("")
 
-    const onSubmit = () => {
+    const onSubmit = async() => {
         const data = { supplierName, origin, walletAddress, supplierEmail }
         
+        const response = await registerSupplier(data)
+        if(response?.error === true) {
+            
+        }
     }
 
     return (
