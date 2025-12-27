@@ -4,8 +4,7 @@ export default async function callApi({ method, url, data = null }) {
     const response = await axios({
         url,
         method,
-        data,
-        headers
+        data
     }).catch((err) => err.response)
 
     if (response?.status > 300) {
@@ -22,7 +21,7 @@ export default async function callApi({ method, url, data = null }) {
     const res = {
         error: false,
         message: "Success",
-        data: length > 1 ? response.data : response.data.data
+        data: length > 1 ? response.data : response.data
     }
     
     return res;

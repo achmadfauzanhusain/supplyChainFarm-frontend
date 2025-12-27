@@ -73,8 +73,8 @@ export default function Home() {
             shadow-inner overflow-hidden
             hover:from-blue-400 hover:to-blue-500
             inset-shadow-sm inset-shadow-white/50 mt-6 text-xs md:text-sm">
-            <span class="relative z-10">Register Now</span>
-            <span class="absolute inset-0 bg-white opacity-20 blur-md translate-x-3 translate-y-3 rounded-lg"></span>
+            <span className="relative z-10">Register Now</span>
+            <span className="absolute inset-0 bg-white opacity-20 blur-md translate-x-3 translate-y-3 rounded-lg"></span>
           </button>
         </div>
 
@@ -82,7 +82,7 @@ export default function Home() {
         <div className="mt-32 md:mt-44 px-4 sm:px-8 lg:px-18">
           <div className="flex flex-col md:flex-row items-start justify-between gap-16 md:gap-0">
             <div className="flex items-center gap-4">
-              <Image className="w-[30px] sm:w-5 md:w-[30px]" src="/logo.png" width={30} height={0} />
+              <Image alt="" className="w-[30px] sm:w-5 md:w-[30px]" src="/logo.png" width={30} height={0} />
               <p className={`${urbanist.className} text-lg md:text-xl font-semibold`}>fauzanhusain</p>
             </div>
 
@@ -91,10 +91,10 @@ export default function Home() {
 
               <div className="flex items-center gap-6">
                 <Link href="">
-                  <Image className="w-[30px] sm:w-5 md:w-[30px]" src="/icon/instagram.png" width={25} height={0} />
+                  <Image alt="" className="w-[30px] sm:w-5 md:w-[30px]" src="/icon/instagram.png" width={25} height={0} />
                 </Link>
                 <Link href="">
-                  <Image className="w-[30px] sm:w-5 md:w-[30px]" src="/icon/linkedin.png" width={25} height={0} />
+                  <Image alt="" className="w-[30px] sm:w-5 md:w-[30px]" src="/icon/linkedin.png" width={25} height={0} />
                 </Link>
               </div>
             </div>
@@ -102,11 +102,11 @@ export default function Home() {
             <div className="flex flex-col gap-4">
               <h3 className={`${urbanist.className} text-lg md:text-xl font-semibold`}>Contact</h3>
               <p className="text-xs md:text-sm font-semibold flex items-center gap-2">
-                <Image src="/icon/email.png" className="sm:w-5 md:w-[25px]" width={25} height={0} />
+                <Image alt="" src="/icon/email.png" className="sm:w-5 md:w-[25px]" width={25} height={0} />
                 achmadfauzanhusain<br className="hidden md:block" />13@gmail.com
               </p>
               <p className="text-xs md:text-sm font-semibold flex items-center gap-2">
-                <Image src="/icon/whatsapp.png" className="sm:w-5 md:w-[25px]" width={25} height={0} />
+                <Image alt="" src="/icon/whatsapp.png" className="sm:w-5 md:w-[25px]" width={25} height={0} />
                 0896 8405 3091
               </p>
             </div>
