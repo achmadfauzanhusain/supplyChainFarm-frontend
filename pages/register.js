@@ -16,11 +16,12 @@ const Register = () => {
     const [origin, setOrigin] = useState("")
     const [ethWalletAddress, setEthWalletAddress] = useState("")
     const [emailSupplier, setEmailSupplier] = useState("")
+    const [description, setDescription] = useState("")
 
     const router = useRouter()
 
     const onSubmit = async() => {
-        const data = { supplierName, origin, ethWalletAddress, emailSupplier }
+        const data = { supplierName, origin, ethWalletAddress, emailSupplier, description }
         
         const response = await registerSupplier(data)
         if(response?.error === true) {
@@ -32,41 +33,53 @@ const Register = () => {
     }
 
     return (
-        <div className="mt-10 md:mt-18 px-4 sm:px-8 lg:px-18 pb-14">
+        <div className="mt-10 md:mt-18 w-[95%] sm:w-[80%] lg:w-[90%] pb-14 mx-auto">
             <Link href="/">
                 <Image className="w-[25px] md:w-[30px]" src="/icon/back.png" alt="" width={30} height={0} />
             </Link>
             
-            <h1 className={`${urbanist.className} mt-8 text-3xl md:text-4xl font-[1000]`}><span className="bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent">Register your wallet to</span> <br /> become a supplier</h1>
-            <div className="flex flex-col gap-10 md:gap-14 mt-10 md:mt-14">
+            <h1 className={`${urbanist.className} mt-8 text-2xl sm:text-3xl md:text-4xl font-[1000]`}><span className="bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent">Register your wallet to</span> <br /> become a supplier</h1>
+            <div className="flex flex-col gap-8 sm:gap-10 md:gap-14 mt-10 md:mt-14">
                 <input
                     type="text"
                     value={supplierName}
                     onChange={(event) => setSupplierName(event.target.value)}
-                    className="text-lg md:text-2xl border-b px-3 py-4 font-semibold outline-none"
+                    className="text-base sm:text-lg md:text-2xl border-b px-3 py-4 font-semibold outline-none"
                     placeholder="Supplier Name : PT KOPI ..." 
                 />
                 <input
                     type="text"
                     value={origin}
                     onChange={(event) => setOrigin(event.target.value)}
-                    className="text-lg md:text-2xl border-b px-3 py-4 font-semibold outline-none"
+                    className="text-base sm:text-lg md:text-2xl border-b px-3 py-4 font-semibold outline-none"
                     placeholder="Origin : Toraja, Sulawesi Selatan" 
                 />
                 <input
                     type="text"
                     value={ethWalletAddress}
                     onChange={(event) => setEthWalletAddress(event.target.value)}
-                    className="text-lg md:text-2xl border-b px-3 py-4 font-semibold outline-none"
+                    className="text-base sm:text-lg md:text-2xl border-b px-3 py-4 font-semibold outline-none"
                     placeholder="ETH Wallet Address" 
                 />
                 <input
                     type="text"
                     value={emailSupplier}
                     onChange={(event) => setEmailSupplier(event.target.value)}
-                    className="text-lg md:text-2xl border-b px-3 py-4 font-semibold outline-none"
+                    className="text-base sm:text-lg md:text-2xl border-b px-3 py-4 font-semibold outline-none"
                     placeholder="Supplier Email" 
                 />
+
+                <div className="bg-neutral-secondary-medium border rounded-b-2xl">
+                    <textarea 
+                        value={description}
+                        onChange={(event) => setDescription(event.target.value)}
+                        rows="8" 
+                        className="block w-full p-4 text-sm text-heading bg-neutral-secondary-medium focus:ring-0 outline-none placeholder:text-body" 
+                        placeholder="Write an description..." 
+                        required
+                        >    
+                    </textarea>
+                </div>
             </div>
             <button type="button" onClick={onSubmit} className="w-full text-xs mt-6 py-4 relative cursor-pointer transition-all duration-300 px-6 rounded-md text-white
                 bg-linear-to-r from-[#0D6EFD] to-blue-600
