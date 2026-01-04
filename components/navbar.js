@@ -1,14 +1,11 @@
-"use client";
-
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { Urbanist } from "next/font/google";
 
-const urbanist = Urbanist({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
+import { Urbanist } from "next/font/google";
+const urbanist = Urbanist({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"]});
+
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
