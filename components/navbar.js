@@ -1,12 +1,92 @@
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Urbanist } from "next/font/google";
 const urbanist = Urbanist({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"]});
 
+import { BrowserProvider, Contract } from "ethers";
+import config from "@/config.json";
+import SupplyChainNFT from "../abis/SupplyChainNFT.json";
+
+import { getAddress } from "ethers";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [account, setAccount] = useState(null);
+
+  const [contract, setContract] = useState(null);
+  const [isVerifiedSupplier, setIsVerifiedSupplier] = useState(false);
+
+  const loadBlockchainData = async () => {
+    if (!window.ethereum) return;
+    const provider = new BrowserProvider(window.ethereum);
+    const network = await provider.getNetwork();
+    const signer = await provider.getSigner();
+
+    const supplyChainNFT = new Contract(
+      config[network.chainId].SupplyChainNFT.address,
+      SupplyChainNFT,
+      signer
+    );
+    setContract(supplyChainNFT);
+  }
+
+  const checkVerifiedSupplier = async (userAccount, scContract) => {
+    if (!userAccount || !scContract) return;
+
+    try {
+      const isVerified = await scContract.verifiedSuppliers(userAccount);
+      setIsVerifiedSupplier(isVerified);
+    } catch (err) {
+      console.error("checkVerifiedSupplier error:", err);
+      setIsVerifiedSupplier(false);
+    }
+  }
+
+  useEffect(() => {
+    if (!window.ethereum) return;
+
+    const loadAccount = async () => {
+      const accounts = await window.ethereum.request({
+        method: "eth_accounts",
+      });
+
+      if (accounts.length > 0) {
+        setAccount(getAddress(accounts[0]));
+      } else {
+        setAccount(null);
+      }
+    };
+
+    loadAccount();
+    loadBlockchainData();
+
+    const handleAccountsChanged = (accounts) => {
+      if (accounts.length > 0) {
+        setAccount(getAddress(accounts[0]));
+      } else {
+        setAccount(null);
+        setIsVerifiedSupplier(false);
+      }
+    };
+
+    window.ethereum.on("accountsChanged", handleAccountsChanged);
+
+    return () => {
+      window.ethereum.removeListener(
+        "accountsChanged",
+        handleAccountsChanged
+      );
+    };
+  }, [])
+
+  useEffect(() => {
+    if (account && contract) {
+      checkVerifiedSupplier(account, contract)
+    }
+  }, [account, contract])
+
 
   return (
     <div className="w-full text-white">
@@ -24,16 +104,19 @@ const Navbar = () => {
             Suppliers
           </Link>
 
-          {/* Register Button */}
-          <Link href="/register" className="relative cursor-pointer transition-all duration-300 px-6 py-2 rounded-lg text-white 
-                     bg-linear-to-r from-[#0D6EFD] to-blue-600
-                     shadow-inner overflow-hidden
-                     hover:from-blue-400 hover:to-blue-500
-                     inset-shadow-sm inset-shadow-white/5"
-          >
-            <span className="relative z-10">Register</span>
-            <span className="absolute inset-0 bg-white opacity-20 blur-md translate-x-3 translate-y-3 rounded-lg"></span>
-          </Link>
+          {isVerifiedSupplier ? (
+            <p className="text-[#38B2AC] font-semibold">{account.slice(0, 6) + '...' + account.slice(38, 42)}</p>
+          ) : (
+            <Link href="/register" className="relative cursor-pointer transition-all duration-300 px-6 py-2 rounded-lg text-white 
+                      bg-linear-to-r from-[#0D6EFD] to-blue-600
+                      shadow-inner overflow-hidden
+                      hover:from-blue-400 hover:to-blue-500
+                      inset-shadow-sm inset-shadow-white/5"
+            >
+              <span className="relative z-10">Register</span>
+              <span className="absolute inset-0 bg-white opacity-20 blur-md translate-x-3 translate-y-3 rounded-lg"></span>
+            </Link>
+          )}
         </div>
 
         {/* Mobile Icon */}
@@ -74,9 +157,13 @@ const Navbar = () => {
             Suppliers
           </Link>
 
-          <Link href="/register" className="p-2 rounded-lg hover:bg-white/20" onClick={() => setIsOpen(false)}>
-            Register
-          </Link>
+          {isVerifiedSupplier ? (
+            <p className="p-2 rounded-lg bg-green-600/30 text-[#38B2AC] font-semibold">{account.slice(0, 6) + '...' + account.slice(38, 42)}</p>
+          ) : (
+            <Link href="/register" className="p-2 rounded-lg hover:bg-white/20" onClick={() => setIsOpen(false)}>
+              Register
+            </Link>
+          )}
         </div>
       </div>
     </div>
