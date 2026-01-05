@@ -105,7 +105,9 @@ const Navbar = () => {
           </Link>
 
           {isVerifiedSupplier ? (
-            <p className="text-[#38B2AC] font-semibold">{account.slice(0, 6) + '...' + account.slice(38, 42)}</p>
+            <Link href="/mint">
+              <p className="text-[#38B2AC] font-semibold">{account.slice(0, 6) + '...' + account.slice(38, 42)}</p>
+            </Link>
           ) : (
             <Link href="/register" className="relative cursor-pointer transition-all duration-300 px-6 py-2 rounded-lg text-white 
                       bg-linear-to-r from-[#0D6EFD] to-blue-600
