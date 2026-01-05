@@ -1,10 +1,43 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Urbanist } from "next/font/google"
+import { useState, useEffect } from "react";
 
+import { Urbanist } from "next/font/google"
 const urbanist = Urbanist({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
 
+import { BrowserProvider, Contract } from "ethers";
+import config from "@/config.json";
+import SupplyChainNFT from "../abis/SupplyChainNFT.json";
+
 const Mint = () => {
+    const [contract, setContract] = useState(null);
+
+    const loadBlockchainData = async () => {
+        await window.ethereum.request({ method: 'eth_requestAccounts' })
+
+        const provider = new BrowserProvider(window.ethereum);
+        const network = await provider.getNetwork();
+        const signer = await provider.getSigner()
+
+        const supplyChainNFT = new Contract(
+            config[network.chainId].supplyChainNFT.address,
+            SupplyChainNFT,
+            signer
+        )
+        setContract(supplyChainNFT);
+    }
+
+    const mintProduct = () => {
+
+    }
+
+    const uploadToPinata = (metadata, tokenId) => {
+
+    }
+
+    useEffect(() => {
+        loadBlockchainData();
+    }, []);
     return (
         <div className="mt-18 px-2 sm:px-4 md:px-8 lg:px-18 pb-14">
             <Link href="/">
@@ -23,11 +56,9 @@ const Mint = () => {
                     <input type="text" className="w-full px-3 md:px-4 py-4 text-sm sm:text-base md:text-lg outline-none font-bold border-b" placeholder="Production date: YYYY-MM-DD" />
                     <input type="text" className="w-full px-3 md:px-4 py-4 text-sm sm:text-base md:text-lg outline-none font-bold border-b" placeholder="Enter product description" />
                 </div>
-                <button className="relative cursor-pointer transition-all duration-300 py-3 md:py-4 rounded-lg text-white
-                    bg-linear-to-r from-[#0D6EFD] to-blue-600
-                    shadow-inner overflow-hidden
-                    hover:from-blue-400 hover:to-blue-500
-                    inset-shadow-sm inset-shadow-white/5 w-full mt-8 text-xs md:text-sm font-semibold">
+                <button 
+                    onClick=""
+                    className="relative cursor-pointer transition-all duration-300 py-3 md:py-4 rounded-lg text-white bg-linear-to-r from-[#0D6EFD] to-blue-600 shadow-inner overflow-hidden hover:from-blue-400 hover:to-blue-500 inset-shadow-sm inset-shadow-white/5 w-full mt-8 text-xs md:text-sm font-semibold">
                     <span class="relative z-10">Mint Product</span>
                     <span class="absolute inset-0 bg-white opacity-20 blur-md translate-x-3 translate-y-3 rounded-lg"></span>
                 </button>
