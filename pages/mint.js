@@ -13,7 +13,7 @@ const Mint = () => {
 
             <h1 className={`${urbanist.className} text-3xl sm:text-4xl md:text-5xl font-[1000] mt-10`}><span className="bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent">I Want to make My</span><br /> Product Decentralized</h1>
             <div className="mt-10">
-                <h1 className={`${urbanist.className} text-3xl sm:text-4xl md:text-5xl font-[1000]`}>Mint New Product</h1>
+                <h1 className={`${urbanist.className} text-2xl sm:text-3xl md:text-4xl font-[1000]`}>Mint New Product</h1>
 
                 <div className="mt-10 flex flex-col gap-12">
                     <input type="text" className="w-full px-3 md:px-4 py-4 text-sm sm:text-base md:text-lg outline-none font-bold border-b" placeholder="Enter product name" />
