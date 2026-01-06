@@ -1,9 +1,11 @@
 import axios from "axios";
 import callApi from "@/config/api";
-import { pinataApiKey, pinataApiSecret } from "../config"
 
 const ROOT_API = "https://tblo-server.vercel.app";
 const API_VERSION = "api/v1";
+
+const pinata_api_key=process.env.PINATA_API_KEY
+const pinata_api_secret=process.env.PINATA_API_SECRET
 
 export async function registerSupplier(data) {
     const url = `${ROOT_API}/${API_VERSION}/supplier/register`;
@@ -34,13 +36,13 @@ export async function uploadToPinata(metadata, tokenId) {
       },
       {
         headers: {
-          pinata_api_key: pinataApiKey,
-          pinata_secret_api_key: pinataApiSecret,
+          pinata_api_key: process.env.NEXT_PUBLIC_PINATA_API_KEY,
+          pinata_secret_api_key: process.env.NEXT_PUBLIC_PINATA_API_SECRET
         }
       }
     );
 
-    return `ipfs://${res.data.IpfsHash}`;
+    return `ipfs://${res.data.IpfsHash}`
   } catch (err) {
     console.error(err.response?.data || err.message);
     throw err;
