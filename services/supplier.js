@@ -12,3 +12,11 @@ export async function registerSupplier(data) {
         data
     })
 }
+
+export async function registeredSuppliers() {
+    const url = `${ROOT_API}/${API_VERSION}/supplier/registered`;
+    return await callApi({
+        url,
+        method: "GET",
+    });
+}
