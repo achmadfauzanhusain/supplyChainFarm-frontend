@@ -4,9 +4,6 @@ import callApi from "@/config/api";
 const ROOT_API = "https://tblo-server.vercel.app";
 const API_VERSION = "api/v1";
 
-const pinata_api_key=process.env.PINATA_API_KEY
-const pinata_api_secret=process.env.PINATA_API_SECRET
-
 export async function registerSupplier(data) {
     const url = `${ROOT_API}/${API_VERSION}/supplier/register`;
     return callApi({
