@@ -31,7 +31,7 @@ export async function uploadToPinata(metadata, tokenId) {
       {
         pinataContent: metadata,
         pinataMetadata: {
-          name: `metadata-${tokenId}.json`,
+          name: `tblo-product-${tokenId}.json`,
         }
       },
       {
