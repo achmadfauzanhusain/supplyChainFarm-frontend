@@ -19,7 +19,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const DetailProduct = () => {
     const [contract, setContract] = useState(null)
     const [product, setProduct] = useState({})
-    const [tokenId, setTokenId] = useState(null)
     const [metadata, setMetadata] = useState(null)
 
     const [loadingProduct, setLoadingProduct] = useState(true)
@@ -41,12 +40,8 @@ const DetailProduct = () => {
 
     const fetchDetailProduct = async() => {
         try {
-            const nextTokenId = await contract.nextTokenId()
-            const lastTokenId = Number(nextTokenId) - 1
             const product = await contract.products(id)
-
             setProduct(product)
-            setTokenId(lastTokenId)
         } catch (error) {
             toast.error(error)
         } finally {
@@ -97,7 +92,7 @@ const DetailProduct = () => {
                     {loadingProduct ? (
                         <div className="h-8 w-16 bg-gray-300 rounded-md animate-pulse"></div>
                     ) : (
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">#{tokenId}</h2>
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">#{id}</h2>
                     )}
                 </div>
             </div>
