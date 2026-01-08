@@ -10,10 +10,16 @@ import { BrowserProvider, Contract } from "ethers";
 import config from "@/config.json";
 import SupplyChainNFT from "../../../../abis/SupplyChainNFT.json"
 
+import { ipfsToHttp } from "@/services/supplier";
+
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 const DetailProduct = () => {
     const [contract, setContract] = useState(null)
     const [product, setProduct] = useState({})
     const [tokenId, setTokenId] = useState()
+    const [metadata, setMetadata] = useState(null)
 
     const router = useRouter()
     const { id } = router.query
@@ -39,12 +45,21 @@ const DetailProduct = () => {
 
     useEffect(() => {
         loadBlockchainData()
-    }, [])
 
-    useEffect(() => {
         if (!contract || !router.isReady) return;
         fetchDetailProduct()
     }, [contract, router.isReady])
+
+    useEffect(() => {
+        if(!product.metadataURI) return
+        const fetchMetadata = async() => {
+            try {
+                
+            } catch (error) {
+                toast.error(error)
+            }
+        }
+    }, [product.metadataURI])
     return (
         <div className="mt-10 md:mt-18 px-2 sm:px-8 lg:px-18 pb-8">
             <button className="cursor-pointer" onClick={() => router.back()}>

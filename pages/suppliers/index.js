@@ -9,6 +9,9 @@ const urbanist = Urbanist({
 
 import { registeredSuppliers } from "@/services/supplier";
 
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 const Suppliers = () => {
   const [suppliers, setSuppliers] = useState([]);
   const [loading, setLoading] = useState(true);

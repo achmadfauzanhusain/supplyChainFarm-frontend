@@ -12,6 +12,9 @@ import SupplyChainNFT from "../../../abis/SupplyChainNFT.json";
 
 import { detailSupplier } from "@/services/supplier";
 
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 const Supplier = () => {
     const [contract, setContract] = useState(null);
     const [products, setProducts] = useState([])
