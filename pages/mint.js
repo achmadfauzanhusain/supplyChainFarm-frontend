@@ -34,7 +34,7 @@ const Mint = () => {
         const provider = new BrowserProvider(window.ethereum);
         const network = await provider.getNetwork();
         const signer = await provider.getSigner()
-        setSigner(signer)
+        setSigner(signer.address)
 
         const supplyChainNFT = new Contract(
             config[network.chainId].SupplyChainNFT.address,
@@ -59,7 +59,7 @@ const Mint = () => {
                 BigInt(quantityKg),
                 String(ipfsURI),
                 {
-                    value: await contract.mintFee()
+                    value: await parseEther("0.001")
                 }
             )
                 toast.success("Minting Success!")
