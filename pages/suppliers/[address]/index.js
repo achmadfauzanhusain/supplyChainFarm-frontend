@@ -73,7 +73,7 @@ const Supplier = () => {
                 const response = await detailSupplier(address)
                 setSupplier(response.data.data)
             } catch (error) {
-                console.error(error)
+                toast.error(error)
             } finally {
                 setLoadingSupplier(false)
             }
