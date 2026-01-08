@@ -1,31 +1,68 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from 'next/navigation'
+import { useState, useEffect } from "react";
+import { useRouter } from 'next/router'
 
 import { Urbanist } from "next/font/google"
-
 const urbanist = Urbanist({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] })
 
+import { BrowserProvider, Contract } from "ethers";
+import config from "@/config.json";
+import SupplyChainNFT from "../../../../abis/SupplyChainNFT.json"
+
 const DetailProduct = () => {
+    const [contract, setContract] = useState(null)
+    const [product, setProduct] = useState({})
+    const [tokenId, setTokenId] = useState()
+
     const router = useRouter()
+    const { id } = router.query
+
+    const loadBlockchainData = async() => {
+        const provider = new BrowserProvider(window.ethereum)
+        const network = await provider.getNetwork()
+        const supplyChainNFT = new Contract(
+            config[network.chainId].SupplyChainNFT.address,
+            SupplyChainNFT,
+            provider
+        )
+        setContract(supplyChainNFT)
+    }
+
+    const fetchDetailProduct = async() => {
+        const nextTokenId = await contract.nextTokenId()
+        const tokenId = Number(nextTokenId) - 1
+        const product = await contract.products(id)
+        setProduct(product)
+        setTokenId(tokenId)
+    }
+
+    useEffect(() => {
+        loadBlockchainData()
+    }, [])
+
+    useEffect(() => {
+        if (!contract || !router.isReady) return;
+        fetchDetailProduct()
+    }, [contract, router.isReady])
     return (
         <div className="mt-10 md:mt-18 px-2 sm:px-8 lg:px-18 pb-8">
             <button className="cursor-pointer" onClick={() => router.back()}>
-                <Image className="w-[25px] md:w-[30px]" src="/icon/back.png" width={30} height={0} />
+                <Image className="w-[25px] md:w-[30px]" src="/icon/back.png" width={30} height={0} alt="" />
             </button>
 
             <div className="flex justify-between items-center mt-8">
-                <h1 className={`${urbanist.className} text-3xl sm:text-4xl md:text-5xl font-bold`}>Kopi Arabica</h1>
+                <h1 className={`${urbanist.className} text-3xl sm:text-4xl md:text-5xl font-bold`}>{product?.name}</h1>
 
                 <div>
                     <p className="text-xs sm:text-sm opacity-75 font-semibold">tokenId</p>
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">#121</h2>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">#{tokenId}</h2>
                 </div>
             </div>
             <div className="flex justify-between items-center mt-4">
                 <div>
                     <p className="text-xs sm:text-sm opacity-75 font-semibold">batch</p>
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">#1</h2>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">#{product?.batch_number}</h2>
                 </div>
 
                 <div>
@@ -44,11 +81,11 @@ const DetailProduct = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 mt-5">
                 <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg">
                     <h2 className="text-sm md:text-base font-bold">quantity</h2>
-                    <p className="text-xs font-medium opacity-75">100kg</p>
+                    <p className="text-xs font-medium opacity-75">{Number(product.quantity_kg)}kg</p>
                 </div>
                 <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg">
                     <h2 className="text-sm md:text-base font-bold">origin</h2>
-                    <p className="text-xs font-medium opacity-75">Toraja, Sulawesi Selatan</p>
+                    <p className="text-xs font-medium opacity-75">{product?.origin}</p>
                 </div>
                 <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg">
                     <h2 className="text-sm md:text-base font-bold">production date</h2>
@@ -56,11 +93,11 @@ const DetailProduct = () => {
                 </div>
                 <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg">
                     <h2 className="text-sm md:text-base font-bold">current status</h2>
-                    <p className="text-xs font-medium opacity-75">Shipped to distributor</p>
+                    <p className="text-xs font-medium opacity-75">{product?.currentStatus}</p>
                 </div>
                 <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg">
                     <h2 className="text-sm md:text-base font-bold">address supplier</h2>
-                    <p className="text-xs font-medium opacity-75">0xA8c...f39B</p>
+                    <p className="text-xs font-medium opacity-75">{product?.supplier?.slice(0, 6) + '...' + product?.supplier?.slice(38, 42)}</p>
                 </div>
             </div>
 
