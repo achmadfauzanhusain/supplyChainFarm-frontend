@@ -19,7 +19,7 @@ const Suppliers = () => {
         const response = await registeredSuppliers();
         setSuppliers(response.data.data);
       } catch (error) {
-        console.error(error);
+        toast.error(error);
       } finally {
         setLoading(false);
       }
@@ -34,8 +34,7 @@ const Suppliers = () => {
         <div className="h-3 w-1/2 bg-gray-300/30 rounded"></div>
       </div>
     );
-  };
-
+  }
   return (
     <div className="mt-10 md:mt-18 px-2 sm:px-4 lg:px-18">
       <div className="flex justify-between items-center">
