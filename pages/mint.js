@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 import { Urbanist } from "next/font/google"
 const urbanist = Urbanist({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
@@ -15,6 +16,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Mint = () => {
     const [contract, setContract] = useState(null);
+    const [signer, setSigner] = useState("")
 
     // input states
     const [name, setName] = useState("");
@@ -24,12 +26,15 @@ const Mint = () => {
     const [productionDate, setProductionDate] = useState("");
     const [description, setDescription] = useState("");
 
+    const router = useRouter()
+
     const loadBlockchainData = async () => {
         await window.ethereum.request({ method: 'eth_requestAccounts' })
 
         const provider = new BrowserProvider(window.ethereum);
         const network = await provider.getNetwork();
         const signer = await provider.getSigner()
+        setSigner(signer)
 
         const supplyChainNFT = new Contract(
             config[network.chainId].SupplyChainNFT.address,
@@ -43,8 +48,6 @@ const Mint = () => {
         if (!contract) return;
         try {
             const nextTokenId = await contract.nextTokenId()
-            console.log("Next tokenId:", nextTokenId.toString())
-
             const metadata = { description, productionDate }
 
             const ipfsURI = await uploadToPinata(metadata, nextTokenId)
@@ -56,10 +59,11 @@ const Mint = () => {
                 BigInt(quantityKg),
                 String(ipfsURI),
                 {
-                    value: await parseEther("0.01")
+                    value: await contract.mintFee()
                 }
             )
-                console.log("berhasil minting product!")
+                toast.success("Minting Success!")
+                router.push(`/suppliers/${signer}`)
             }
         } catch (error) {
             toast.error("Minting failed: " + error.message)
