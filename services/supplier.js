@@ -29,6 +29,7 @@ export async function detailSupplier(data) {
   })
 }
 
+// pinata
 export async function uploadToPinata(metadata, tokenId) {
   try {
     const res = await axios.post(
@@ -52,4 +53,9 @@ export async function uploadToPinata(metadata, tokenId) {
     console.error(err.response?.data || err.message);
     throw err;
   }
+}
+
+export async function ipfsToHttp(uri) {
+  if (!uri) return null;
+  return uri.replace("ipfs://", "https://gateway.pinata.cloud/ipfs/");
 }
