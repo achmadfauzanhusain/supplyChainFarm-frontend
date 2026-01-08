@@ -21,6 +21,14 @@ export async function registeredSuppliers() {
     });
 }
 
+export async function detailSupplier(data) {
+  const url = `${ROOT_API}/${API_VERSION}/supplier/detail/${data}`;
+  return await callApi({
+    url,
+    method: "GET",
+  })
+}
+
 export async function uploadToPinata(metadata, tokenId) {
   try {
     const res = await axios.post(
