@@ -17,6 +17,9 @@ const Supplier = () => {
     const [products, setProducts] = useState([])
     const [supplier, setSupplier] = useState({})
 
+    const [loadingSupplier, setLoadingSupplier] = useState(true)
+    const [loadingProducts, setLoadingProducts] = useState(true)
+
     const router = useRouter()
     const { address } = router.query
     
@@ -32,7 +35,8 @@ const Supplier = () => {
     }
 
     const fetchProduct = async() => {
-        if(!contract) return
+        if(!contract || !address) return
+
         const nextTokenId = await contract.nextTokenId()
         const lastTokenId = Number(nextTokenId) - 1
 
@@ -62,35 +66,72 @@ const Supplier = () => {
     }, []);
 
     useEffect(() => {
-        if (!contract) return;
+        if (!contract || !router.isReady) return;
+
         const fetchDetailSupplier = async() => {
             try {
-                if (!router.isReady) return
                 const response = await detailSupplier(address)
                 setSupplier(response.data.data)
             } catch (error) {
-                toast.error(error)
+                console.error(error)
+            } finally {
+                setLoadingSupplier(false)
             }
         }
+
+        const fetchProductsData = async () => {
+            await fetchProduct()
+            setLoadingProducts(false)
+        }
+
         fetchDetailSupplier()
-        fetchProduct();
-    }, [contract]);
+        fetchProductsData()
+    }, [contract, router.isReady]);
+
     return (
         <div className="mt-10 md:mt-18 px-5 md:px-8 lg:px-18">
             <button className="cursor-pointer" onClick={() => router.back()}>
                 <Image className="w-[25px] md:w-[30px]" src="/icon/back.png" width={30} height={0} alt="" />
             </button>
 
-            <h1 className={`${urbanist.className} text-3xl sm:text-4xl md:text-5xl font-bold mt-8`}>{supplier.supplierName}</h1>
-            <div className="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-                {products?.map((p) => (
-                    <Link key={p.tokenId} href="/suppliers/0x29f19a33c3af612cb5248d2e208b1113d0898e5b/3" className="bg-[#BEE3F8]/25 py-4 px-3 rounded-lg">
-                        <h2 className="text-sm md:text-base font-[1000]">{p.name}</h2>
-                        <p className="text-xs font-medium opacity-75">{p.origin}</p>
-                        <p className="text-xs font-medium opacity-75 mt-1">Batch {p.batch}</p>
-                        <p className="text-xs font-medium opacity-75 mt-1">{p.quantity_kg}kg</p>
-                    </Link>
-                ))}
+            <h1 className={`${urbanist.className} text-3xl sm:text-4xl md:text-5xl font-bold mt-8`}>
+                {loadingSupplier ? (
+                    <div className="h-10 w-64 bg-gray-300 rounded-md animate-pulse"></div>
+                ) : (
+                    supplier.supplierName
+                )}
+            </h1>
+
+            <div className="mt-8 md:mt-10">
+                {loadingProducts ? (
+                    <div className="animate-pulse grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                        {[...Array(6)].map((_, i) => (
+                            <div key={i} className="bg-gray-300/40 rounded-lg p-4">
+                                <div className="h-4 w-3/4 bg-gray-300 rounded mb-2"></div>
+                                <div className="h-3 w-1/2 bg-gray-300 rounded mb-2"></div>
+                                <div className="h-3 w-1/3 bg-gray-300 rounded mb-2"></div>
+                                <div className="h-3 w-1/4 bg-gray-300 rounded"></div>
+                            </div>
+                        ))}
+                    </div>
+                ) : products.length === 0 ? (
+                    <p className="text-sm opacity-60">Masih belum ada produk</p>
+                ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                        {products.map((p) => (
+                            <Link
+                                key={p.tokenId}
+                                href={`/suppliers/${p.supplier}/${p.tokenId}`}
+                                className="bg-[#BEE3F8]/25 py-4 px-3 rounded-lg"
+                            >
+                                <h2 className="text-sm md:text-base font-[1000]">{p.name}</h2>
+                                <p className="text-xs font-medium opacity-75">{p.origin}</p>
+                                <p className="text-xs font-medium opacity-75 mt-1">Batch {p.batch}</p>
+                                <p className="text-xs font-medium opacity-75 mt-1">{p.quantity_kg}kg</p>
+                            </Link>
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     )
