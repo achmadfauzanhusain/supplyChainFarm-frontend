@@ -159,7 +159,9 @@ const Navbar = () => {
           </Link>
 
           {isVerifiedSupplier ? (
-            <p className="p-2 rounded-lg bg-green-600/30 text-[#38B2AC] font-semibold">{account.slice(0, 6) + '...' + account.slice(38, 42)}</p>
+            <Link href="/mint">
+              <p className="p-2 rounded-lg bg-green-600/30 text-[#38B2AC] font-semibold">{account.slice(0, 6) + '...' + account.slice(38, 42)}</p>
+            </Link>
           ) : (
             <Link href="/register" className="p-2 rounded-lg hover:bg-white/20" onClick={() => setIsOpen(false)}>
               Register
