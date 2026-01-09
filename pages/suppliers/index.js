@@ -47,7 +47,7 @@ const Suppliers = () => {
           Suppliers
         </h1>
 
-        <Link href="/search" className="text-xs sm:text-sm md:text-sm text-right w-[60%] md:w-[50%] px-3 py-3 outline-none">
+        <Link href="/suppliers/search" className="text-xs sm:text-sm md:text-sm text-right w-[60%] md:w-[50%] px-3 py-3 outline-none">
           Search
         </Link>
       </div>
