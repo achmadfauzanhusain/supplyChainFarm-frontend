@@ -18,6 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const DetailProduct = () => {
     const [contract, setContract] = useState(null)
+    const [signer, setSigner] = useState("")
     const [product, setProduct] = useState({})
     const [metadata, setMetadata] = useState(null)
 
@@ -27,9 +28,13 @@ const DetailProduct = () => {
     const router = useRouter()
     const { id } = router.query
 
+    const isOwner = signer === product?.currentHolder
+
     const loadBlockchainData = async() => {
         const provider = new BrowserProvider(window.ethereum)
         const network = await provider.getNetwork()
+        const signer = await provider.getSigner()
+        setSigner(signer.address)
         const supplyChainNFT = new Contract(
             config[network.chainId].SupplyChainNFT.address,
             SupplyChainNFT,
@@ -108,18 +113,24 @@ const DetailProduct = () => {
                         </h2>
                     )}
                 </div>
-
-                <Link
-                    href={`/suppliers/${product?.supplier}/${id}/edit-status`}
-                    className="relative cursor-pointer transition-all duration-300 px-3 sm:px-6 py-2 rounded-lg text-white
-                    bg-linear-to-r from-[#0D6EFD] to-blue-600
-                    shadow-inner overflow-hidden
-                    hover:from-blue-400 hover:to-blue-500
-                    inset-shadow-sm inset-shadow-white/5"
-                >
-                    <span className="relative z-10 text-xs">edit status</span>
-                    <span className="absolute inset-0 bg-white opacity-20 blur-md rounded-lg"></span>
-                </Link>
+                
+                {isOwner ? (
+                    <Link
+                        href={`/suppliers/${product?.supplier}/${id}/edit-status`}
+                        className="relative cursor-pointer transition-all duration-300 px-3 sm:px-6 py-2 rounded-lg text-white
+                        bg-linear-to-r from-[#0D6EFD] to-blue-600
+                        shadow-inner overflow-hidden
+                        hover:from-blue-400 hover:to-blue-500
+                        inset-shadow-sm inset-shadow-white/5"
+                    >
+                        <span className="relative z-10 text-xs">edit status</span>
+                        <span className="absolute inset-0 bg-white opacity-20 blur-md rounded-lg"></span>
+                    </Link>
+                ) : (
+                    <div>
+                        
+                    </div>
+                )}
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 mt-5">
