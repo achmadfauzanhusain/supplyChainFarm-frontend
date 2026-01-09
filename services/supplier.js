@@ -29,6 +29,15 @@ export async function detailSupplier(data) {
   })
 }
 
+export async function searchSupplier(data) {
+  const url = `${ROOT_API}/${API_VERSION}/supplier/search`;
+  return await callApi({
+    url,
+    method: "POST",
+    data
+  })
+}
+
 // pinata
 export async function uploadToPinata(metadata, tokenId) {
   try {
