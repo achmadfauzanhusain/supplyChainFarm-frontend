@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { useRouter } from 'next/router'
+import { isAddress } from "ethers"
 
 import { Urbanist } from "next/font/google"
 const urbanist = Urbanist({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] })
@@ -20,6 +21,7 @@ const EditStatus = () => {
 
     // input
     const [newStatus, setNewStatus] = useState("")
+    const [walletReceiver, setWalletReceiver] = useState()
 
     const router = useRouter()
     const { id } = router.query
@@ -47,13 +49,18 @@ const EditStatus = () => {
         }
     }
 
-    // update status
-    const updateStatus = async() => {
+    // transfer product
+    const transferProduct = async() => {
         if(!contract) return
         try {
-            await contract.updateStatus(id, newStatus)
-            toast.success("Success changing status!")
-            router.push(`/suppliers/${product?.supplier}/${id}`)
+            if(!isAddress(walletReceiver)) {
+                toast.error("Invalid ETH Wallet Address")
+            } else {
+                const response = await contract.transferProduct(id, walletReceiver, newStatus)
+                console.log(response)
+                // toast.success("Success changing status!")
+                // router.push(`/suppliers/${product?.supplier}/${id}`)
+            }
         } catch (error) {
             toast.error("Updating failed: " + error)
         }
@@ -124,8 +131,25 @@ const EditStatus = () => {
                     )}
                 </div>
 
+                <div className="flex flex-col gap-2 mt-8">
+                    <label className="font-[1000] text-xs sm:text-sm md:text-base">
+                        Wallet Receiver
+                    </label>
+
+                    {loadingProduct ? (
+                        <div className="w-full sm:w-[75%] md:w-[50%] h-12 bg-gray-300 rounded-md animate-pulse"></div>
+                    ) : (
+                        <input
+                            value={walletReceiver}
+                            onChange={(event) => setWalletReceiver(event.target.value)}
+                            className="w-full sm:w-[75%] md:w-[50%] text-xs sm:text-sm md:text-base border-b px-2 sm:px-4 py-3 font-medium outline-none"
+                            placeholder="eth wallet address for receiver"
+                        />
+                    )}
+                </div>
+
                 <button 
-                    onClick={updateStatus}
+                    onClick={transferProduct}
                     disabled={loadingProduct}
                     className={`w-full text-xs mt-6 py-3 md:py-4 relative transition-all duration-300 px-6 rounded-md md:rounded-lg text-white
                     ${loadingProduct 
