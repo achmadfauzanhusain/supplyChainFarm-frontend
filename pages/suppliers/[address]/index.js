@@ -89,7 +89,7 @@ const Supplier = () => {
 
         fetchDetailSupplier()
         fetchProductsData()
-    }, [contract, router.isReady]);
+    }, [contract, router.isReady, products]);
 
     return (
         <div className="mt-10 md:mt-18 px-5 md:px-8 lg:px-18">
