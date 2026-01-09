@@ -57,12 +57,14 @@ const EditStatus = () => {
                 toast.error("Invalid ETH Wallet Address")
             } else {
                 const response = await contract.transferProduct(id, walletReceiver, newStatus)
-                console.log(response)
-                // toast.success("Success changing status!")
-                // router.push(`/suppliers/${product?.supplier}/${id}`)
+                if(!response) {
+                    toast.error("Failed transfer owner of product!")
+                }
+                toast.success("Success changing status!")
+                router.push(`/suppliers/${product?.supplier}/${id}`)
             }
         } catch (error) {
-            toast.error("Updating failed: " + error)
+            toast.error("Your not owned this product!")
         }
     }
 
