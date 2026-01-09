@@ -47,10 +47,9 @@ const Suppliers = () => {
           Suppliers
         </h1>
 
-        <input
-          className="text-xs sm:text-sm md:text-sm border-b w-[60%] md:w-[50%] px-3 py-3 outline-none"
-          placeholder="Search by supplier name"
-        />
+        <Link href="/search" className="text-xs sm:text-sm md:text-sm text-right w-[60%] md:w-[50%] px-3 py-3 outline-none">
+          Search
+        </Link>
       </div>
 
       <div className="mt-8 md:mt-10 grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
