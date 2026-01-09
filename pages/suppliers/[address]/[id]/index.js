@@ -180,6 +180,17 @@ const DetailProduct = () => {
                         </p>
                     )}
                 </div>
+
+                <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg">
+                    <h2 className="text-sm md:text-base font-bold">current holder</h2>
+                    {loadingProduct ? (
+                        <div className="h-4 w-28 bg-gray-300 rounded animate-pulse mt-1"></div>
+                    ) : (
+                        <p className="text-xs font-medium opacity-75">
+                            {product?.currentHolder?.slice(0, 6) + "..." + product?.currentHolder?.slice(38, 42)}
+                        </p>
+                    )}
+                </div>
             </div>
 
             <div className="mt-14">

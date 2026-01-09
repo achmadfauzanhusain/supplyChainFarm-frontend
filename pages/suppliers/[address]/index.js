@@ -37,7 +37,7 @@ const Supplier = () => {
         setContract(supplyChainNFT);
     }
 
-    const fetchProduct = async() => {
+    const fetchProducts = async() => {
         if(!contract || !address) return
 
         const nextTokenId = await contract.nextTokenId()
@@ -46,7 +46,6 @@ const Supplier = () => {
         const items = []
         for(let tokenId = 1; tokenId <= lastTokenId; tokenId++) { 
             const p = await contract.products(tokenId)
-
             if(p.supplier === address) {
                 items.push({
                     tokenId,
@@ -54,10 +53,7 @@ const Supplier = () => {
                     origin: p.origin,
                     batch: p.batch_number,
                     quantity_kg: p.quantity_kg.toString(),
-                    metadataURI: p.metadataURI,
-                    status: p.currentStatus,
-                    supplier: p.supplier,
-                    createdAt: Number(p.createdAt),
+                    supplier: p.supplier
                 });
             }
         }
@@ -83,14 +79,13 @@ const Supplier = () => {
         }
 
         const fetchProductsData = async () => {
-            await fetchProduct()
+            await fetchProducts()
             setLoadingProducts(false)
         }
 
         fetchDetailSupplier()
         fetchProductsData()
     }, [contract, router.isReady, products]);
-
     return (
         <div className="mt-10 md:mt-18 px-5 md:px-8 lg:px-18">
             <button className="cursor-pointer" onClick={() => router.back()}>
