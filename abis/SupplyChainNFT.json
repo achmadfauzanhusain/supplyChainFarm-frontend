@@ -253,6 +253,37 @@
       "inputs": [
         {
           "indexed": false,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "newStatus",
+          "type": "string"
+        }
+      ],
+      "name": "StatusUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
           "internalType": "address",
           "name": "supplier",
           "type": "address"
@@ -416,6 +447,11 @@
               "type": "address"
             },
             {
+              "internalType": "address",
+              "name": "currentHolder",
+              "type": "address"
+            },
+            {
               "internalType": "uint256",
               "name": "createdAt",
               "type": "uint256"
@@ -448,6 +484,19 @@
           "internalType": "bool",
           "name": "",
           "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "mintFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -587,6 +636,11 @@
         {
           "internalType": "address",
           "name": "supplier",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "currentHolder",
           "type": "address"
         },
         {
@@ -782,12 +836,17 @@
           "type": "uint256"
         },
         {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
           "internalType": "string",
           "name": "_newStatus",
           "type": "string"
         }
       ],
-      "name": "updateStatus",
+      "name": "transferProduct",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -811,4 +870,4 @@
       "stateMutability": "view",
       "type": "function"
     }
-]
+  ]
