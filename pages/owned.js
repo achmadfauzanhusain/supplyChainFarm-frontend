@@ -40,7 +40,7 @@ const Owned = () => {
         const items = []
         for(let tokenId = 1; tokenId <= lastTokenId; tokenId++) {
             const p = await contract.products(tokenId)
-            if(p.supplier === signer) {
+            if(p.supplier === signer || p.currentHolder === signer) {
                 items.push({
                     tokenId,
                     name: p.name,
