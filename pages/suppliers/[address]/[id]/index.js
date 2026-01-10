@@ -35,7 +35,14 @@ const DetailProduct = () => {
         const network = await provider.getNetwork()
         const signer = await provider.getSigner()
         setSigner(signer.address)
-        if(!signer) return;
+        if(!signer) {
+            const supplyChainNFT = new Contract(
+                config[network.chainId].SupplyChainNFT.address,
+                SupplyChainNFT,
+                provider
+            )
+            setContract(supplyChainNFT)
+        }
         const supplyChainNFT = new Contract(
             config[network.chainId].SupplyChainNFT.address,
             SupplyChainNFT,
