@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 import { Urbanist } from "next/font/google";
@@ -47,8 +48,17 @@ const Suppliers = () => {
           Suppliers
         </h1>
 
-        <Link href="/suppliers/search" className="text-xs sm:text-sm md:text-sm text-right w-[60%] md:w-[50%] px-3 py-3 outline-none">
-          Search
+        <Link
+          href="/suppliers/search"
+          className="flex justify-end items-center w-[60%] md:w-[50%] px-3 py-3"
+        >
+          <Image
+            src="/icon/search.png"
+            alt="Search"
+            width={25}
+            height={25}
+            className="cursor-pointer"
+          />
         </Link>
       </div>
 
