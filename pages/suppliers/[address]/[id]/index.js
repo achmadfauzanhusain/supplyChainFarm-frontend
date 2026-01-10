@@ -55,11 +55,8 @@ const DetailProduct = () => {
     }
 
     useEffect(() => {
-        loadBlockchainData()
-
-        if (!contract || !router.isReady) return
-        fetchDetailProduct()
-    }, [contract, router.isReady])
+        loadBlockchainData()        
+    }, [])
 
     useEffect(() => {
         if(!product.metadataURI) return
@@ -75,8 +72,10 @@ const DetailProduct = () => {
                 setLoadingMetadata(false)
             }
         }
+        if (!contract || !router.isReady) return
+        fetchDetailProduct()
         fetchMetadata()
-    }, [product.metadataURI])
+    }, [product.metadataURI, contract, router.isReady])
     return (
         <div className="mt-10 md:mt-18 px-2 sm:px-8 lg:px-18 pb-8">
             <button className="cursor-pointer" onClick={() => router.back()}>
