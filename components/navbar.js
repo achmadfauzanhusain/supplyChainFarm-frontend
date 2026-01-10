@@ -19,10 +19,8 @@ const Navbar = () => {
   const [isVerifiedSupplier, setIsVerifiedSupplier] = useState(false);
 
   const loadBlockchainData = async () => {
-    if (!window.ethereum) return;
     const provider = new BrowserProvider(window.ethereum);
     const network = await provider.getNetwork();
-
     const supplyChainNFT = new Contract(
       config[network.chainId].SupplyChainNFT.address,
       SupplyChainNFT,
