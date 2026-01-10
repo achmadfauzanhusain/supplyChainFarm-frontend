@@ -48,9 +48,8 @@ const Navbar = () => {
 
     const loadAccount = async () => {
       const accounts = await window.ethereum.request({
-            method: "wallet_switchEthereumChain",
-            params: [{ chainId: "0xaa36a7" }], // 11155111 in hex
-        })
+        method: "eth_accounts",
+      });
 
       if (accounts.length > 0) {
         setAccount(getAddress(accounts[0]));
