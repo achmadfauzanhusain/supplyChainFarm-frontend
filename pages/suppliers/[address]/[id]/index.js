@@ -18,9 +18,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const DetailProduct = () => {
     const [contract, setContract] = useState(null)
+    const [signer, setSigner] = useState("")
     const [product, setProduct] = useState({})
     const [metadata, setMetadata] = useState(null)
-    const [owner, setOwner] = useState("")
 
     const [loadingProduct, setLoadingProduct] = useState(true)
     const [loadingMetadata, setLoadingMetadata] = useState(true)
@@ -28,16 +28,37 @@ const DetailProduct = () => {
     const router = useRouter()
     const { id } = router.query
 
-    const isOwner = owner === product?.currentHolder
+    const isOwner = signer && product?.currentHolder && signer.toLowerCase() === product.currentHolder.toLowerCase()
+
+    const getProvider = async () => {
+        if (typeof window !== "undefined" && window.ethereum) {
+            return new BrowserProvider(window.ethereum)
+        }
+
+        return new JsonRpcProvider(
+            `https://sepolia.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_KEY}`
+        )
+    }
 
     const loadBlockchainData = async() => {
-        const provider = new BrowserProvider(window.ethereum)
+        const provider = await getProvider()
         const network = await provider.getNetwork()
+
+        let userAddress = ""
+
+        // hanya ambil signer jika ada wallet
+        if (provider instanceof BrowserProvider) {
+            const signer = await provider.getSigner()
+            userAddress = signer.address
+            setSigner(userAddress)
+        }
+
         const supplyChainNFT = new Contract(
             config[network.chainId].SupplyChainNFT.address,
             SupplyChainNFT,
             provider
         )
+
         setContract(supplyChainNFT)
     }
 
@@ -45,8 +66,6 @@ const DetailProduct = () => {
         try {
             const product = await contract.products(id)
             setProduct(product)
-            const owner = await contract.ownerOf(id)
-            setOwner(owner)
         } catch (error) {
             toast.error(error)
         } finally {
