@@ -29,7 +29,10 @@ const Mint = () => {
     const router = useRouter()
 
     const loadBlockchainData = async () => {
-        await window.ethereum.request({ method: 'eth_requestAccounts' })
+        await window.ethereum.request({
+            method: "wallet_switchEthereumChain",
+            params: [{ chainId: "0xaa36a7" }], // 11155111 in hex
+        })
 
         const provider = new BrowserProvider(window.ethereum);
         const network = await provider.getNetwork();
