@@ -18,9 +18,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const DetailProduct = () => {
     const [contract, setContract] = useState(null)
-    const [signer, setSigner] = useState("")
     const [product, setProduct] = useState({})
     const [metadata, setMetadata] = useState(null)
+    const [owner, setOwner] = useState("")
 
     const [loadingProduct, setLoadingProduct] = useState(true)
     const [loadingMetadata, setLoadingMetadata] = useState(true)
@@ -28,21 +28,11 @@ const DetailProduct = () => {
     const router = useRouter()
     const { id } = router.query
 
-    const isOwner = signer === product?.currentHolder
+    const isOwner = owner === product?.currentHolder
 
     const loadBlockchainData = async() => {
         const provider = new BrowserProvider(window.ethereum)
         const network = await provider.getNetwork()
-        const signer = await provider.getSigner()
-        setSigner(signer.address)
-        if(!signer) {
-            const supplyChainNFT = new Contract(
-                config[network.chainId].SupplyChainNFT.address,
-                SupplyChainNFT,
-                provider
-            )
-            setContract(supplyChainNFT)
-        }
         const supplyChainNFT = new Contract(
             config[network.chainId].SupplyChainNFT.address,
             SupplyChainNFT,
@@ -55,6 +45,8 @@ const DetailProduct = () => {
         try {
             const product = await contract.products(id)
             setProduct(product)
+            const owner = await contract.ownerOf(id)
+            setOwner(owner)
         } catch (error) {
             toast.error(error)
         } finally {
@@ -65,6 +57,11 @@ const DetailProduct = () => {
     useEffect(() => {
         loadBlockchainData()        
     }, [])
+
+    useEffect(() => {
+        if (!contract || !router.isReady) return
+        fetchDetailProduct()
+    }, [contract, router.isReady])
 
     useEffect(() => {
         if(!product.metadataURI) return
@@ -80,10 +77,8 @@ const DetailProduct = () => {
                 setLoadingMetadata(false)
             }
         }
-        if (!contract || !router.isReady) return
-        fetchDetailProduct()
         fetchMetadata()
-    }, [product.metadataURI, contract, router.isReady])
+    }, [product.metadataURI])
     return (
         <div className="mt-10 md:mt-18 px-2 sm:px-8 lg:px-18 pb-8">
             <button className="cursor-pointer" onClick={() => router.back()}>
