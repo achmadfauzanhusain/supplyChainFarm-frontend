@@ -54,15 +54,15 @@ const Search = () => {
                 </h1>
             </div>
 
-            <div className="flex items-end gap-3 mt-16">
+            <div className="flex items-end gap-2 sm:gap-3 mt-16">
                 <input
-                    className="flex-1 px-4 py-3 border-b border-gray-600 outline-none"
+                    className="flex-1 text-sm px-4 py-3 border-b border-gray-600 outline-none"
                     placeholder="Enter supplier name"
                     value={supplierName}
                     onChange={(e) => setSupplierName(e.target.value)}
                 />
 
-                <button onClick={searchSupplierName} className="px-2 md:px-4 cursor-pointer py-2 bg-[#0D6EFD] rounded-md">
+                <button onClick={searchSupplierName} className="px-2 sm:px-4 py-2 bg-[#0D6EFD] rounded-md">
                     <Image className="w-5 md:w-[25px]" src="/icon/search.png" width={30} height={0} alt="" />
                 </button>
             </div>
