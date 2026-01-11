@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import { Urbanist } from "next/font/google"
 const urbanist = Urbanist({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] })
 
-import { BrowserProvider, Contract } from "ethers";
+import { BrowserProvider, JsonRpcProvider, Contract } from "ethers";
 import config from "@/config.json";
 import SupplyChainNFT from "../../../../abis/SupplyChainNFT.json"
 
