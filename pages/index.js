@@ -48,7 +48,7 @@ export default function Home() {
         </div>
 
         <div className="mt-28 md:mt-32 text-center">
-          <h1 className={`${urbanist.className} text-4xl md:text-5xl font-bold bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent`}>Its Simple Like This :</h1>
+          <h1 className={`${urbanist.className} text-4xl md:text-5xl font-bold bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent`}>Its Simple <br className="sm:hidden" />Like This :</h1>
           <p className="mt-4 font-medium text-sm sm:text-base md:text-lg opacity-75">Transparent <span className="text-[#38B2AC] opacity-100">Supply Chain</span> = trustworthy data + <br /> process efficiency + stronger reputation + protection <br /> from fraud.</p>
         </div>
 
@@ -65,7 +65,7 @@ export default function Home() {
         </div>
 
         <div className="mt-32 md:mt-44 text-center">
-          <h1 className={`${urbanist.className} text-4xl md:text-5xl font-bold bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent`}>You Have a Bussiness?</h1>
+          <h1 className={`${urbanist.className} text-4xl md:text-5xl font-bold bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent`}>You Have a <br className="sm:hidden" /> Bussiness?</h1>
           <p className="mt-4 text-sm sm:text-base md:text-lg font-medium opacity-75">Do you have a company or are you a supplier? You <br /> can make your product <span className="text-[#38B2AC] opacity-100">Supply Chain</span> transparent.</p>
           
           <button className="relative cursor-pointer transition-all duration-300 px-6 py-3 rounded-lg text-white
