@@ -56,7 +56,7 @@ const Search = () => {
 
             <div className="flex items-end gap-2 sm:gap-3 mt-16">
                 <input
-                    className="flex-1 text-sm px-4 py-3 border-b border-gray-600 outline-none"
+                    className="text-white placeholder:text-gray-400 flex-1 text-sm px-4 py-3 border-b border-gray-600 outline-none"
                     placeholder="Enter supplier name"
                     value={supplierName}
                     onChange={(e) => setSupplierName(e.target.value)}
