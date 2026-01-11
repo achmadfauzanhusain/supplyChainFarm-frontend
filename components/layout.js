@@ -8,6 +8,7 @@ const Layout = ({ children }) => {
         <>
             <Head>
                 <title>TBLO</title>
+                <meta name="color-scheme" content="light"></meta>
             </Head>
             <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
                 <main className={`${poppins.className} px-2 sm:px-4 md:px-12 lg:px-20 mt-8 mx-auto`}>{children}</main>
