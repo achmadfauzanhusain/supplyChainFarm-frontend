@@ -27,7 +27,7 @@ const Supplier = () => {
     const { address } = router.query
     
     const loadBlockchainData = async() => {
-        const provider = new BrowserProvider(window.ethereum);
+        const provider = new BrowserProvider(`https://sepolia.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_KEY}`);
         const network = await provider.getNetwork();
         const supplyChainNFT = new Contract(
             config[network.chainId].SupplyChainNFT.address,
