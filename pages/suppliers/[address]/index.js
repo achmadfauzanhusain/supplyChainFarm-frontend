@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import { Urbanist } from "next/font/google"
 const urbanist = Urbanist({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] })
 
-import { BrowserProvider, Contract } from "ethers";
+import { BrowserProvider, JsonRpcProvider, Contract } from "ethers";
 import config from "@/config.json";
 import SupplyChainNFT from "../../../abis/SupplyChainNFT.json";
 
@@ -26,16 +26,21 @@ const Supplier = () => {
     const router = useRouter()
     const { address } = router.query
     
-    const loadBlockchainData = async() => {
-        const provider = new BrowserProvider(`https://sepolia.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_KEY}`);
+    const loadBlockchainData = async () => {
+        const provider = new JsonRpcProvider(
+            `https://sepolia.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_KEY}`
+        );
+
         const network = await provider.getNetwork();
+
         const supplyChainNFT = new Contract(
             config[network.chainId].SupplyChainNFT.address,
             SupplyChainNFT,
             provider
         );
+
         setContract(supplyChainNFT);
-    }
+    };
 
     const fetchProducts = async() => {
         if(!contract || !address) return
