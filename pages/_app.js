@@ -7,8 +7,8 @@ import { useEffect } from "react";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
-    document.documentElement.classList.remove("dark")
-  }, [])
+  document.documentElement.classList.remove("dark")
+}, [])
   return (
     <Layout>
       <Component {...pageProps} />
