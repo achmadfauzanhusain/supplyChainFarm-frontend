@@ -68,7 +68,7 @@ export default function Home() {
           <h1 className={`${urbanist.className} text-4xl md:text-5xl font-bold bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent`}>You Have a <br className="sm:hidden" /> Bussiness?</h1>
           <p className="px-8 sm:px-0 mt-4 text-sm sm:text-base md:text-lg font-medium opacity-75">Do you have a company or are you a supplier? You <br /> can make your product <span className="text-[#38B2AC] opacity-100">Supply Chain</span> transparent.</p>
           
-          <Link href="/register" className="relative cursor-pointer transition-all duration-300 px-6 py-3 rounded-lg text-white
+          <Link href="/register" className="inline-block relative cursor-pointer transition-all duration-300 px-6 py-3 rounded-lg text-white
             bg-linear-to-r from-[#0D6EFD] to-blue-600
             shadow-inner overflow-hidden
             hover:from-blue-400 hover:to-blue-500
