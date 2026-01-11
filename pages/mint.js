@@ -108,7 +108,7 @@ const Mint = () => {
                 )}
                 {!signer && (
                     <p className="mt-10 text-sm opacity-70 font-semibold">
-                        Register become supplier uf you want to minting product
+                        Register become supplier if you want to minting product
                     </p>
                 )}
             </div>
