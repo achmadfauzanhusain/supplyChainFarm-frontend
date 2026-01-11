@@ -90,12 +90,12 @@ const Mint = () => {
                 {signer && (
                     <>
                         <div className="mt-10 flex flex-col gap-12">
-                            <input value={name} onChange={(event) => setName(event.target.value)} className="w-full px-3 md:px-4 py-4 text-sm sm:text-base md:text-lg outline-none font-bold border-b" placeholder="Enter product name" />
-                            <input value={origin} onChange={(event) => setOrigin(event.target.value)} className="w-full px-3 md:px-4 py-4 text-sm sm:text-base md:text-lg outline-none font-bold border-b" placeholder="Enter origin name: Toraja, Sulawesi Selatan" />
-                            <input value={batchNumber} onChange={(event) => setBatchNumber(event.target.value)} className="w-full px-3 md:px-4 py-4 text-sm sm:text-base md:text-lg outline-none font-bold border-b" placeholder="Enter batch number" />
-                            <input value={quantityKg} onChange={(event) => setQuantityKg(event.target.value)} className="w-full px-3 md:px-4 py-4 text-sm sm:text-base md:text-lg outline-none font-bold border-b" placeholder="Enter quantity per kg" />
-                            <input value={productionDate} onChange={(event) => setProductionDate(event.target.value)} className="w-full px-3 md:px-4 py-4 text-sm sm:text-base md:text-lg outline-none font-bold border-b" placeholder="Production date: YYYY-MM-DD" />
-                            <input value={description} onChange={(event) => setDescription(event.target.value)} className="w-full px-3 md:px-4 py-4 text-sm sm:text-base md:text-lg outline-none font-bold border-b" placeholder="Enter product description" />
+                            <input value={name} onChange={(event) => setName(event.target.value)} className="text-white placeholder:text-gray-400 w-full px-3 md:px-4 py-4 text-sm sm:text-base md:text-lg outline-none font-bold border-b" placeholder="Enter product name" />
+                            <input value={origin} onChange={(event) => setOrigin(event.target.value)} className="text-white placeholder:text-gray-400 w-full px-3 md:px-4 py-4 text-sm sm:text-base md:text-lg outline-none font-bold border-b" placeholder="Enter origin name: Toraja, Sulawesi Selatan" />
+                            <input value={batchNumber} onChange={(event) => setBatchNumber(event.target.value)} className="text-white placeholder:text-gray-400 w-full px-3 md:px-4 py-4 text-sm sm:text-base md:text-lg outline-none font-bold border-b" placeholder="Enter batch number" />
+                            <input value={quantityKg} onChange={(event) => setQuantityKg(event.target.value)} className="text-white placeholder:text-gray-400 w-full px-3 md:px-4 py-4 text-sm sm:text-base md:text-lg outline-none font-bold border-b" placeholder="Enter quantity per kg" />
+                            <input value={productionDate} onChange={(event) => setProductionDate(event.target.value)} className="text-white placeholder:text-gray-400 w-full px-3 md:px-4 py-4 text-sm sm:text-base md:text-lg outline-none font-bold border-b" placeholder="Production date: YYYY-MM-DD" />
+                            <input value={description} onChange={(event) => setDescription(event.target.value)} className="text-white placeholder:text-gray-400 w-full px-3 md:px-4 py-4 text-sm sm:text-base md:text-lg outline-none font-bold border-b" placeholder="Enter product description" />
                         </div>
 
                         <button 
