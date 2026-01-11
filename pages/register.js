@@ -41,6 +41,7 @@ const Register = () => {
             <h1 className={`${urbanist.className} mt-8 text-2xl sm:text-3xl md:text-4xl font-[1000]`}><span className="bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent">Register your wallet to</span> <br /> become a supplier</h1>
             <div className="flex flex-col gap-8 sm:gap-10 md:gap-14 mt-10 md:mt-14">
                 <input
+                    autoComplete="off"
                     type="text"
                     value={supplierName}
                     onChange={(event) => setSupplierName(event.target.value)}
@@ -48,6 +49,7 @@ const Register = () => {
                     placeholder="Supplier Name : PT KOPI ..." 
                 />
                 <input
+                    autoComplete="off"
                     type="text"
                     value={origin}
                     onChange={(event) => setOrigin(event.target.value)}
@@ -55,6 +57,7 @@ const Register = () => {
                     placeholder="Origin : Toraja, Sulawesi Selatan" 
                 />
                 <input
+                    autoComplete="off"
                     type="text"
                     value={ethWalletAddress}
                     onChange={(event) => setEthWalletAddress(event.target.value)}
@@ -62,6 +65,7 @@ const Register = () => {
                     placeholder="ETH Wallet Address" 
                 />
                 <input
+                    autoComplete="off"
                     type="text"
                     value={emailSupplier}
                     onChange={(event) => setEmailSupplier(event.target.value)}
@@ -71,6 +75,7 @@ const Register = () => {
 
                 <div className="bg-neutral-secondary-medium border rounded-b-2xl">
                     <textarea 
+                        autoComplete="off"
                         value={description}
                         onChange={(event) => setDescription(event.target.value)}
                         rows="8" 
