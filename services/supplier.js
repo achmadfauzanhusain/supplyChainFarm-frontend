@@ -64,7 +64,7 @@ export async function uploadToPinata(metadata, tokenId) {
   }
 }
 
-export async function ipfsToHttp(uri) {
+export function ipfsToHttp(uri) {
   if (!uri) return null;
   return uri.replace("ipfs://", "https://gateway.pinata.cloud/ipfs/");
 }
