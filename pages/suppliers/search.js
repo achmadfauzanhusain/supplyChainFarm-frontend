@@ -62,7 +62,7 @@ const Search = () => {
                     onChange={(e) => setSupplierName(e.target.value)}
                 />
 
-                <button onClick={searchSupplierName} className="px-4 py-2 bg-[#0D6EFD] rounded-md">
+                <button onClick={searchSupplierName} className="px-2 md:px-4 cursor-pointer py-2 bg-[#0D6EFD] rounded-md">
                     <Image className="w-5 md:w-[25px]" src="/icon/search.png" width={30} height={0} alt="" />
                 </button>
             </div>
