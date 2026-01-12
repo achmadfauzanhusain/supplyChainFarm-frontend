@@ -97,7 +97,7 @@ const Supplier = () => {
                 <Image className="w-[25px] md:w-[30px]" src="/icon/back.png" width={30} height={0} alt="" />
             </button>
 
-            <h1 className={`${urbanist.className} text-3xl sm:text-4xl md:text-5xl font-bold mt-8`}>
+            <h1 className={`${urbanist.className} text-3xl sm:text-4xl md:text-5xl font-bold mt-8 wrap-break-word`}>
                 {loadingSupplier ? (
                     <div className="h-10 w-64 bg-gray-300 rounded-md animate-pulse"></div>
                 ) : (
