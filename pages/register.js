@@ -22,13 +22,16 @@ const Register = () => {
 
     const onSubmit = async() => {
         const data = { supplierName, origin, ethWalletAddress, emailSupplier, description }
-        
-        const response = await registerSupplier(data)
-        if(response?.error === true) {
-            toast.error(response.message);
-        } else {
-            toast.success(response.data.message);
-            router.push("/")
+
+        const confirm = window.confirm("Are you sure?")
+        if(confirm) {
+            const response = await registerSupplier(data)
+            if(response?.error === true) {
+                toast.error(response.message);
+            } else {
+                toast.success(response.data.message);
+                router.push("/")
+            }
         }
     }
 
