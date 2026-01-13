@@ -15,6 +15,7 @@ import { ipfsToHttp } from "@/services/supplier";
 
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import QRCode from "react-qr-code";
 
 const DetailProduct = () => {
     const [contract, setContract] = useState(null)
@@ -237,6 +238,55 @@ const DetailProduct = () => {
                         {metadata?.description}
                     </p>
                 )}
+                
+                <div className="mt-10">
+                    <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                        <div className="px-6 py-4 border-b border-gray-100">
+                        <h3 className="text-lg font-semibold text-gray-900">
+                            Product Verification QR
+                        </h3>
+                        <p className="text-sm text-gray-500 mt-1">
+                            Scan to verify product authenticity on blockchain
+                        </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-6 py-8">
+                        
+                        <div className="flex flex-col items-center">
+                            <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+                            <QRCode
+                                value={`https://tblochain.com/suppliers/${product?.supplier}/${id}`}
+                                size={220}
+                            />
+                            </div>
+
+                            <p className="mt-3 text-xs text-gray-400 font-medium tracking-wide">
+                            TBLO • BLOCKCHAIN VERIFIED
+                            </p>
+                        </div>
+
+                        <div className="space-y-4">
+                            <h4 className="text-base font-semibold text-gray-900">
+                            How to use this QR
+                            </h4>
+
+                            <p className="text-sm text-gray-600 leading-relaxed">
+                            Print this QR code and attach it to your product packaging.
+                            Buyers can scan it to instantly view product details, origin,
+                            and authenticity secured on the blockchain.
+                            </p>
+
+                            <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-xs text-gray-500">
+                            ✔ Tamper-proof  
+                            <br />
+                            ✔ Publicly verifiable  
+                            <br />
+                            ✔ No centralized server
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
