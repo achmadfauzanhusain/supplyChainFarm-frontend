@@ -15,7 +15,7 @@ export default function Home() {
             Decentralized
           </h1>
           <h1 className={`${urbanist.className} text-4xl sm:text-5xl md:text-6xl font-bold`}>Supply Chain For <br /> Your Product</h1>
-          <p className="mt-4 font-medium text-sm sm:text-base md:text-lg opacity-75">Make your farm product <span className="text-[#38B2AC]">Supply Chain</span> transparent</p>
+          <p className="mt-4 font-medium text-sm sm:text-base md:text-lg opacity-75">Make your products more <span className="text-[#38B2AC]">transparent</span> with us</p>
         </div>
 
         <div className="mt-28 md:mt-32 px-4 sm:px-8 lg:px-18">
