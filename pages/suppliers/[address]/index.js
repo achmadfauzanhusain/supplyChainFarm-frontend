@@ -68,7 +68,6 @@ const Supplier = () => {
     useEffect(() => {
         loadBlockchainData()
     }, []);
-
     useEffect(() => {
         if (!contract || !router.isReady) return;
 
@@ -104,6 +103,7 @@ const Supplier = () => {
                     supplier.supplierName
                 )}
             </h1>
+            <p className="mt-2 md:mt-3 text-xs md:text-sm wrap-break-word">Supplier address : {supplier?.id}</p>
 
             <div className="mt-8 md:mt-10">
                 {loadingProducts ? (
