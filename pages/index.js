@@ -16,7 +16,7 @@ export default function Home() {
           </h1>
           <h1 className={`${urbanist.className} text-4xl sm:text-5xl md:text-6xl font-bold`}>Supply Chain For <br /> Your Product</h1>
           <p className="mt-4 font-medium text-sm sm:text-base opacity-75">
-            Make your products more <span className="text-[#38B2AC]">transparent</span> with us <br />
+            Make your products more <span className="text-[#38B2AC]">transparent</span> with us.<br />
             Simply scan a QR code to see where your product <br /> comes from and how it moves from producer to consumer.
           </p>
         </div>
