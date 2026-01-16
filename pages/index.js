@@ -70,6 +70,10 @@ export default function Home() {
           </div>
         </div>
 
+        <div className="mt-28 md:mt-32 text-center bg-blue-500 py-4">
+          <p className="text-3xl lg:text-4xl mt-4 font-bold">Just 0.001 ETH per product/batch</p>
+        </div>
+
         <div className="mt-32 md:mt-44 text-center">
           <h1 className={`${urbanist.className} text-4xl md:text-5xl font-bold bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent`}>Prevent Counterfeiting <br className="" /> of Your Products</h1>
           <p className="px-8 sm:px-0 mt-4 text-sm sm:text-base font-medium opacity-75">Do you have a company or are you a supplier? You <br /> can make your product <span className="text-[#38B2AC] opacity-100">Supply Chain</span> transparent.</p>
