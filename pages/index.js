@@ -14,7 +14,41 @@ export default function Home() {
           <h1 className={`${urbanist.className} text-4xl sm:text-5xl md:text-6xl font-[1000] bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent`}>
             Decentralized
           </h1>
-          <h1 className={`${urbanist.className} text-4xl sm:text-5xl md:text-6xl font-bold`}>Supply Chain For <br /> Your Product</h1>
+          <h1
+            className={`${urbanist.className} text-4xl sm:text-5xl md:text-6xl font-bold leading-tight`}
+          >
+            {"Supply Chain For".split("").map((char, i) => (
+              <span
+                key={`line1-${i}`}
+                className="
+                  inline-block
+                  transition-all duration-300 ease-out
+                  hover:scale-[1.1] hover:rotate-5
+                  origin-bottom
+                  cursor-pointer
+                "
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+
+            <br />
+
+            {"Your Product".split("").map((char, i) => (
+              <span
+                key={`line2-${i}`}
+                className="
+                  inline-block
+                  transition-all duration-300 ease-out
+                  hover:scale-[1.1] hover:rotate-5
+                  origin-bottom
+                  cursor-pointer
+                "
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+          </h1>
           <p className="mt-4 font-medium text-sm sm:text-base opacity-75">
             Make your products more <span className="text-[#38B2AC]">transparent</span> with us.<br />
             Simply scan a QR code to see where your product <br /> comes from and how it moves from producer to consumer.
@@ -71,7 +105,22 @@ export default function Home() {
         </div>
 
         <div className="mt-28 md:mt-32 text-center bg-blue-500 py-4">
-          <p className="text-3xl lg:text-4xl mt-4 font-bold">Just 0.001 ETH per product/batch</p>
+          <p className="text-3xl lg:text-4xl mt-4 font-bold">
+            {"Just 0.001 ETH per product/batch".split("").map((char, i) => (
+              <span
+                key={i}
+                className="
+                  inline-block
+                  transition-all duration-200 ease-out
+                  hover:scale-[1.1] hover:rotate-3
+                  origin-bottom
+                  cursor-pointer
+                "
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+          </p>
         </div>
 
         <div className="mt-32 md:mt-44 text-center">
