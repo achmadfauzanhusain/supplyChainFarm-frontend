@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="pb-14">
+      <div className="pb-14 overflow-x-hidden">
         <div className="mt-18 text-center">
           <h1 className={`${urbanist.className} text-4xl sm:text-5xl md:text-6xl font-[1000] bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent`}>
             Decentralized
