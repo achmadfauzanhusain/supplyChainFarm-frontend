@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "axios": "^1.13.2",
     "dotenv": "^17.2.3",
     "ethers": "^6.16.0",
