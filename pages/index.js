@@ -116,11 +116,28 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-28 md:mt-32 text-center bg-blue-500 py-4">
-          <p data-aos="fade-up" className="text-3xl lg:text-4xl mt-4 font-bold">
-            {"Just 0.001 ETH per product/batch".split("").map((char, i) => (
+        <div className="mt-28 md:mt-32 text-center bg-blue-500 pt-4 pb-5">
+          <p data-aos="fade-up" className="text-2xl lg:text-4xl mt-4 font-bold">
+            {"Just 0.001 ETH per ".split("").map((char, i) => (
               <span
-                key={i}
+                key={`line1-${i}`}
+                className="
+                  inline-block
+                  transition-all duration-200 ease-out
+                  hover:scale-[1.1] hover:rotate-3
+                  origin-bottom
+                  cursor-pointer
+                "
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+
+            <br className="sm:hidden" />
+
+            {"product/batch".split("").map((char, i) => (
+              <span
+                key={`line2-${i}`}
                 className="
                   inline-block
                   transition-all duration-200 ease-out
