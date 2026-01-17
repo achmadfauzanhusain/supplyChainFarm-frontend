@@ -62,7 +62,7 @@ const Mint = () => {
                 BigInt(quantityKg),
                 String(ipfsURI),
                 {
-                    value: await parseEther("0.001")
+                    value: await parseEther("0.0005")
                 }
             )
                 toast.success("Minting Success!")
