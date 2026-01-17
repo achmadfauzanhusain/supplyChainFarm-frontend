@@ -92,7 +92,7 @@ const Supplier = () => {
     }, [contract, router.isReady, products]);
     return (
         <div className="mt-10 md:mt-18 px-5 md:px-8 lg:px-18">
-            <button className="cursor-pointer" onClick={() => router.back()}>
+            <button className="cursor-pointer" onClick={() => router.push("/suppliers")}>
                 <Image className="w-[25px] md:w-[30px]" src="/icon/back.png" width={30} height={0} alt="" />
             </button>
 
