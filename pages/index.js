@@ -66,7 +66,7 @@ export default function Home() {
             Simply scan a QR code to see where your product <br /> comes from and how it moves from producer to consumer.
           </p>
 
-          <div className="flex w-fit mx-auto items-center mt-6 gap-6">
+          <div className="flex w-fit mx-auto items-center mt-6 gap-4 sm:gap-6">
             <Link data-aos="fade-right" href="/register" className="inline-block relative cursor-pointer transition-all duration-300 px-4 sm:px-6 py-3 rounded-lg text-white
               bg-linear-to-r from-[#0D6EFD] to-blue-600
               shadow-inner overflow-hidden
