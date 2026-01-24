@@ -17,12 +17,12 @@ const Register = () => {
     const [ethWalletAddress, setEthWalletAddress] = useState("")
     const [emailSupplier, setEmailSupplier] = useState("")
     const [description, setDescription] = useState("")
-    const [phoneNumber, setPhoneNumber] = useState()
+    const [phone, setPhone] = useState()
 
     const router = useRouter()
 
     const onSubmit = async() => {
-        const data = { supplierName, origin, ethWalletAddress, emailSupplier, description }
+        const data = { supplierName, origin, ethWalletAddress, emailSupplier, description, phone }
 
         const confirm = window.confirm("Are you sure?")
         if(confirm) {
@@ -86,8 +86,8 @@ const Register = () => {
                 </div>
                 <input
                     type="number"
-                    value={phoneNumber}
-                    onChange={(event) => setPhoneNumber(event.target.value)}
+                    value={phone}
+                    onChange={(event) => setPhone(event.target.value)}
                     className="text-white placeholder:text-gray-400 text-base sm:text-lg md:text-2xl border-b px-3 py-4 font-semibold outline-none"
                     placeholder="Phone : Whatsapp" 
                 />
