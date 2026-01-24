@@ -66,14 +66,25 @@ export default function Home() {
             Simply scan a QR code to see where your product <br /> comes from and how it moves from producer to consumer.
           </p>
 
-          <Link data-aos="fade-right" href="/register" className="inline-block relative cursor-pointer transition-all duration-300 px-6 py-3 rounded-lg text-white
-            bg-linear-to-r from-[#0D6EFD] to-blue-600
-            shadow-inner overflow-hidden
-            hover:from-blue-400 hover:to-blue-500
-            inset-shadow-sm inset-shadow-white/50 mt-6 text-xs md:text-sm">
-            <span className="relative z-10">Register Now</span>
-            <span className="absolute inset-0 bg-white opacity-20 blur-md translate-x-3 translate-y-3 rounded-lg"></span>
-          </Link>
+          <div className="flex w-fit mx-auto items-center mt-6 gap-6">
+            <Link data-aos="fade-right" href="/register" className="inline-block relative cursor-pointer transition-all duration-300 px-4 sm:px-6 py-3 rounded-lg text-white
+              bg-linear-to-r from-[#0D6EFD] to-blue-600
+              shadow-inner overflow-hidden
+              hover:from-blue-400 hover:to-blue-500
+              inset-shadow-sm inset-shadow-white/50 text-xs md:text-sm">
+              <span className="relative z-10">Register Now</span>
+              <span className="absolute inset-0 bg-white opacity-20 blur-md translate-x-3 translate-y-3 rounded-lg"></span>
+            </Link>
+
+            <Link data-aos="fade-right" href="/register" className="inline-block relative cursor-pointer transition-all duration-300 px-4 sm:px-6 py-3 rounded-lg text-white
+              bg-linear-to-r border border-white
+              shadow-inner overflow-hidden
+              hover:bg-white hover:border-black hover:text-black
+              inset-shadow-sm inset-shadow-white/50 text-xs md:text-sm">
+              <span className="relative z-10">See Suppliers</span>
+              <span className="absolute inset-0 bg-white opacity-20 blur-md translate-x-3 translate-y-3 rounded-lg"></span>
+            </Link>
+          </div>
         </div>
 
         <div className="mt-28 md:mt-32 px-4 sm:px-8 lg:px-18">
