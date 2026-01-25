@@ -80,7 +80,7 @@ const Search = () => {
                         href={`/suppliers/${supplier.ethWalletAddress}`}
                         className="bg-[#BEE3F8]/25 py-4 px-3 rounded-lg"
                     >
-                        <h2 className="text-xs sm:text-sm md:text-base font-[1000]">
+                        <h2 className="text-xs sm:text-sm md:text-base font-[1000] wrap-break-word">
                         {supplier.supplierName}
                         </h2>
                         <p className="text-xs font-medium opacity-75">
