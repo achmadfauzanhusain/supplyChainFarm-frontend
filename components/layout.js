@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
             <Head>
                 <title>TBLO</title>
             </Head>
-            <main className={`${poppins.className} px-2 sm:px-4 md:px-12 lg:px-20 mt-8 mx-auto`}>{children}</main>
+            <main className={`${poppins.className} max-w-[1280px] px-2 sm:px-4 md:px-12 lg:px-20 mt-8 mx-auto`}>{children}</main>
         </>
     )
 }
