@@ -188,7 +188,7 @@ export default function Home() {
 
         {/* footer */}
         <div className="mt-32 md:mt-44 px-4 sm:px-8 lg:px-18">
-          <div className="flex flex-col md:flex-row items-start justify-between gap-16 md:gap-0">
+          <div className="flex flex-col md:flex-row items-start justify-between gap-6 md:gap-0">
             <div className="">
               <p className={`text-xl md:text-2xl font-bold`}>TBLO</p>
             </div>
@@ -201,7 +201,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="text-sm md:text-base x-28 mt-24">
+          <div className="text-sm md:text-base x-28 mt-16">
             <p className="text-xs md:text-sm opacity-75">
               Decentralized Supply Chain NFT is a blockchain-based product tracking system that ensures transparency and authenticity in the supply chain.
               Each product is represented as a unique NFT, containing important data such as origin, batch number, production quantity, and current status.
