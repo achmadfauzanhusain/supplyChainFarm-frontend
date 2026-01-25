@@ -189,38 +189,19 @@ export default function Home() {
         {/* footer */}
         <div className="mt-32 md:mt-44 px-4 sm:px-8 lg:px-18">
           <div className="flex flex-col md:flex-row items-start justify-between gap-16 md:gap-0">
-            <div className="flex items-center gap-4">
-              <Image alt="" className="w-[30px] sm:w-5 md:w-[30px]" src="/logo.png" width={30} height={0} />
-              <p className={`${urbanist.className} text-lg md:text-xl font-semibold`}>fauzanhusain</p>
+            <div className="">
+              <p className={`text-xl md:text-2xl font-bold`}>TBLO</p>
             </div>
 
-            <div className="flex flex-col gap-4">
-              <h3 className={`${urbanist.className} text-lg md:text-xl font-semibold`}>Social Media</h3>
-
-              <div className="flex items-center gap-6">
-                <Link href="">
-                  <Image alt="" className="w-[30px] sm:w-5 md:w-[30px]" src="/icon/instagram.png" width={25} height={0} />
-                </Link>
-                <Link href="">
-                  <Image alt="" className="w-[30px] sm:w-5 md:w-[30px]" src="/icon/linkedin.png" width={25} height={0} />
-                </Link>
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-4">
-              <h3 className={`${urbanist.className} text-lg md:text-xl font-semibold`}>Contact</h3>
-              <p className="text-xs md:text-sm font-semibold flex items-center gap-2">
-                <Image alt="" src="/icon/email.png" className="sm:w-5 md:w-[25px]" width={25} height={0} />
-                achmadfauzanhusain<br className="hidden md:block" />13@gmail.com
-              </p>
-              <p className="text-xs md:text-sm font-semibold flex items-center gap-2">
-                <Image alt="" src="/icon/whatsapp.png" className="sm:w-5 md:w-[25px]" width={25} height={0} />
-                0896 8405 3091
-              </p>
+            <div className="text-sm md:text-base x-28">
+                <h3 className="text-xs md:text-sm opacity-75">
+                  Built by Fauzan Husain – Fullstack JS & Blockchain Dev <br />
+                  <Link className="hover:text-blue-300" href="https://fauzanhusain.com">Portfolio</Link> • <Link className="hover:text-blue-300" href="https://www.linkedin.com/in/achmadfauzanhusain/">LinkedIn</Link> • <Link className="hover:text-blue-300" href="https://github.com/achmadfauzanhusain">GitHub</Link>
+                </h3>
             </div>
           </div>
 
-          <div className="ptext-sm md:text-base x-28 mt-24">
+          <div className="text-sm md:text-base x-28 mt-24">
             <p className="text-xs md:text-sm opacity-75">
               Decentralized Supply Chain NFT is a blockchain-based product tracking system that ensures transparency and authenticity in the supply chain.
               Each product is represented as a unique NFT, containing important data such as origin, batch number, production quantity, and current status.
