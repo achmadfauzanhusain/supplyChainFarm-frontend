@@ -87,6 +87,19 @@ export default function Home() {
           </div>
         </div>
 
+        <div className="mt-28 md:mt-32 bg-blue-500 px-4 sm:px-8 lg:px-18 pt-6 pb-7 md:pt-8 md:pb-9">
+          <p data-aos="fade-right" className="text-xs md:text-sm opacity-75">
+            Hi, I’m <span className="font-bold">Achmad Fauzan Husain</span>, founder of <span className="font-bold">TBLO</span>.<br />
+            I’m a software engineer focused on blockchain & decentralized systems, building real-<br />world infrastructure—not just whitepapers.
+          </p>
+          
+          <div data-aos="fade-right" className="flex gap-6 text-xs md:text-sm opacity-75 mt-6">
+            <Link className="hover:font-semibold transition-all duration-300" href="https://www.linkedin.com/in/achmadfauzanhusain/">LinkedIn</Link>
+            <Link className="hover:font-semibold transition-all duration-300" href="https://github.com/achmadfauzanhusain">Github</Link>
+            <Link className="hover:font-semibold transition-all duration-300" href="https://fauzanhusain.com">Founder Portfolio</Link>
+          </div>
+        </div>
+
         <div className="mt-28 md:mt-32 px-4 sm:px-8 lg:px-18">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
             <div data-aos="fade-up" className="border border-white p-6 rounded-2xl cursor-pointer hover:border-[#0D6EFD] transition-all duration-300">
@@ -116,27 +129,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-28 md:mt-32 bg-blue-500 px-4 sm:px-8 lg:px-18 pt-6 pb-7 md:pt-8 md:pb-9">
-          <p data-aos="fade-right" className="text-xs md:text-sm opacity-75">
-            Hi, I’m <span className="font-bold">Achmad Fauzan Husain</span>, founder of <span className="font-bold">TBLO</span>.<br />
-            I’m a software engineer focused on blockchain & decentralized systems, building real-<br />world infrastructure—not just whitepapers.
-          </p>
-          
-          <div data-aos="fade-right" className="flex gap-6 text-xs md:text-sm opacity-75 mt-6">
-            <Link className="hover:font-semibold transition-all duration-300" href="https://www.linkedin.com/in/achmadfauzanhusain/">LinkedIn</Link>
-            <Link className="hover:font-semibold transition-all duration-300" href="https://github.com/achmadfauzanhusain">Github</Link>
-            <Link className="hover:font-semibold transition-all duration-300" href="https://fauzanhusain.com">Founder Portfolio</Link>
-          </div>
-        </div>
-
-        <div className="mt-28 md:mt-32 text-center">
-          <h1 data-aos="fade-right" className={`${urbanist.className} text-4xl md:text-5xl font-bold bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent`}>Its Simple Like This :</h1>
-          <p data-aos="fade-left" className="mt-4 font-medium text-sm sm:text-base opacity-75">
-            Transparent <span className="text-[#38B2AC] opacity-100">Supply Chain</span> = trustworthy data + <br /> process efficiency + stronger reputation + protection <br /> from fraud.
-            For example: food, medicine, or agricultural products can be tracked <br /> per batch and cannot be manipulated.
-          </p>
-        </div>
-
         <div className="mt-28 md:mt-32 bg-[#38B2AC] px-4 sm:px-8 lg:px-18 pt-6 pb-7 md:pt-8 md:pb-9">
           <p data-aos="fade-right" className="text-xs md:text-sm opacity-75">
             You must see the contract on <span className="font-bold">blockchain</span> & see the source code on <span className="font-bold">github</span> to believe it.<br />
@@ -147,6 +139,14 @@ export default function Home() {
             <Link className="hover:font-semibold transition-all duration-300" href="https://sepolia.etherscan.io/address/0x29f19a33c3af612cb5248d2e208b1113d0898e5b">Contract Owner</Link>
             <Link className="hover:font-semibold transition-all duration-300" href="https://github.com/achmadfauzanhusain/supplyChainFarm-smartcontract">Source Code</Link>
           </div>
+        </div>
+
+        <div className="mt-28 md:mt-32 text-center">
+          <h1 data-aos="fade-right" className={`${urbanist.className} text-4xl md:text-5xl font-bold bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent`}>Its Simple Like This :</h1>
+          <p data-aos="fade-left" className="mt-4 font-medium text-sm sm:text-base opacity-75">
+            Transparent <span className="text-[#38B2AC] opacity-100">Supply Chain</span> = trustworthy data + <br /> process efficiency + stronger reputation + protection <br /> from fraud.
+            For example: food, medicine, or agricultural products can be tracked <br /> per batch and cannot be manipulated.
+          </p>
         </div>
 
         <div className="mt-28 md:mt-32 px-4 lg:px-18">
