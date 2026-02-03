@@ -206,14 +206,25 @@ export default function Home() {
           <h1 data-aos="fade-right" className={`${urbanist.className} text-4xl md:text-5xl font-bold bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent`}>Prevent Counterfeiting <br className="" /> of Your Products</h1>
           <p data-aos="fade-left" className="px-8 sm:px-0 mt-4 text-sm sm:text-base font-medium opacity-75">Do you have a company or are you a supplier? You <br /> can make your product <span className="text-[#38B2AC] opacity-100">Supply Chain</span> transparent.</p>
           
-          <Link data-aos="fade-right" href="/register" className="inline-block relative cursor-pointer transition-all duration-300 px-6 py-3 rounded-lg text-white
-            bg-linear-to-r from-[#0D6EFD] to-blue-600
-            shadow-inner overflow-hidden
-            hover:from-blue-400 hover:to-blue-500
-            inset-shadow-sm inset-shadow-white/50 mt-6 text-xs md:text-sm">
-            <span className="relative z-10">Register Now</span>
-            <span className="absolute inset-0 bg-white opacity-20 blur-md translate-x-3 translate-y-3 rounded-lg"></span>
-          </Link>
+          <div className="flex w-fit mx-auto items-center mt-6 gap-4 sm:gap-6">
+            <Link data-aos="fade-right" href="/register" className="inline-block relative cursor-pointer transition-all duration-300 px-4 sm:px-6 py-3 rounded-lg text-white
+              bg-linear-to-r from-[#0D6EFD] to-blue-600
+              shadow-inner overflow-hidden
+              hover:from-blue-400 hover:to-blue-500
+              inset-shadow-sm inset-shadow-white/50 text-xs md:text-sm">
+              <span className="relative z-10">Register Now</span>
+              <span className="absolute inset-0 bg-white opacity-20 blur-md translate-x-3 translate-y-3 rounded-lg"></span>
+            </Link>
+
+            <Link data-aos="fade-right" href="/suppliers" className="inline-block relative cursor-pointer transition-all duration-300 px-4 sm:px-6 py-3 rounded-lg text-white
+              bg-linear-to-r border border-white
+              shadow-inner overflow-hidden
+              hover:bg-white hover:border-black hover:text-black
+              inset-shadow-sm inset-shadow-white/50 text-xs md:text-sm">
+              <span className="relative z-10">See Suppliers</span>
+              <span className="absolute inset-0 bg-white opacity-20 blur-md translate-x-3 translate-y-3 rounded-lg"></span>
+            </Link>
+          </div>
         </div>
 
         {/* footer */}
