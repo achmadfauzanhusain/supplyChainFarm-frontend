@@ -137,6 +137,18 @@ export default function Home() {
           </p>
         </div>
 
+        <div className="mt-28 md:mt-32 bg-[#38B2AC] px-4 sm:px-8 lg:px-18 pt-6 pb-7 md:pt-8 md:pb-9">
+          <p data-aos="fade-right" className="text-xs md:text-sm opacity-75">
+            You must see the contract on <span className="font-bold">blockchain</span> & see the source code on <span className="font-bold">github</span> to believe it.<br />
+            Transparency is our main priority, so everyone can audit the contract & code.
+          </p>
+          <div data-aos="fade-right" className="flex gap-6 text-xs md:text-sm opacity-75 mt-6">
+            <Link className="hover:font-semibold transition-all duration-300" href="https://sepolia.etherscan.io/address/0xD38862cc3A1Cd5757f70924E7F0146426e20cC2D">Contract Adrress</Link>
+            <Link className="hover:font-semibold transition-all duration-300" href="https://sepolia.etherscan.io/address/0x29f19a33c3af612cb5248d2e208b1113d0898e5b">Contract Owner</Link>
+            <Link className="hover:font-semibold transition-all duration-300" href="https://github.com/achmadfauzanhusain/supplyChainFarm-smartcontract">Source Code</Link>
+          </div>
+        </div>
+
         <div className="mt-28 md:mt-32 px-4 lg:px-18">
           <div className="flex gap-8 md:gap-0 flex-col md:flex-row justify-evenly items-center">
             <div data-aos="fade-right">
