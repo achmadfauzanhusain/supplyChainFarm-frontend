@@ -61,9 +61,8 @@ export default function Home() {
               </span>
             ))}
           </h1>
-          <p data-aos="fade-right" className="mt-4 font-medium text-sm sm:text-base opacity-75">
-            Make your products more <span className="text-[#38B2AC]">transparent</span> with us.<br />
-            Simply scan a QR code to see where your product <br /> comes from and how it moves from producer to consumer.
+          <p data-aos="fade-right" className="mt-4 text-sm sm:text-base text-white/75">
+            We help supplier reduce fraud & improve traceability <br /> by 100% using blockchain-based supply chain verification.
           </p>
 
           <div className="flex w-fit mx-auto items-center mt-6 gap-4 sm:gap-6">
@@ -85,9 +84,13 @@ export default function Home() {
               <span className="absolute inset-0 bg-white opacity-20 blur-md translate-x-3 translate-y-3 rounded-lg"></span>
             </Link>
           </div>
+
+          <div className="mt-24">
+            <p className="text-xs md:text-sm opacity-75">Food manufacturers • Logistics companies • Consumer</p>
+          </div>
         </div>
 
-        <div className="mt-28 md:mt-32 bg-blue-500 px-4 sm:px-8 lg:px-18 pt-6 pb-7 md:pt-8 md:pb-9">
+        <div className="mt-18 md:mt-20 bg-blue-500 px-4 sm:px-8 lg:px-18 pt-6 pb-7 md:pt-8 md:pb-9">
           <p data-aos="fade-right" className="text-xs md:text-sm opacity-75">
             Hi, I’m <span className="font-bold">Achmad Fauzan Husain</span>, founder of <span className="font-bold">TBLO</span>.<br />
             I’m a software engineer focused on blockchain & decentralized systems, building real-<br />world infrastructure—not just whitepapers.
@@ -148,9 +151,9 @@ export default function Home() {
 
         <div className="mt-28 md:mt-32 text-center">
           <h1 data-aos="fade-right" className={`${urbanist.className} text-4xl md:text-5xl font-bold bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent`}>Its Simple Like This :</h1>
-          <p data-aos="fade-left" className="mt-4 font-medium text-sm sm:text-base opacity-75">
-            Transparent <span className="text-[#38B2AC] opacity-100">Supply Chain</span> = trustworthy data + <br /> process efficiency + stronger reputation + protection <br /> from fraud.
-            For example: food, medicine, or agricultural products can be tracked <br /> per batch and cannot be manipulated.
+          <p data-aos="fade-left" className="mt-4 text-sm sm:text-base text-white/75 w-full md:w-[50%] mx-auto">
+            Transparent <span className="text-[#38B2AC] opacity-100">Supply Chain</span> = trustworthy data + process efficiency + stronger reputation + protection from fraud.
+            For example: food, medicine, or agricultural products can be tracked per batch and cannot be manipulated.
           </p>
         </div>
 
@@ -243,7 +246,7 @@ export default function Home() {
 
         <div className="mt-32 md:mt-44 text-center">
           <h1 data-aos="fade-right" className={`${urbanist.className} text-4xl md:text-5xl font-bold bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent`}>Prevent Counterfeiting <br className="" /> of Your Products</h1>
-          <p data-aos="fade-left" className="px-8 sm:px-0 mt-4 text-sm sm:text-base font-medium opacity-75">Do you have a company or are you a supplier? You <br /> can make your product <span className="text-[#38B2AC] opacity-100">Supply Chain</span> transparent.</p>
+          <p data-aos="fade-left" className="px-8 sm:px-0 mt-4 text-sm sm:text-base text-white/75">Do you have a company or are you a supplier? You <br /> can make your product <span className="text-[#38B2AC] opacity-100">Supply Chain</span> transparent.</p>
           
           <div className="flex w-fit mx-auto items-center mt-6 gap-4 sm:gap-6">
             <Link data-aos="fade-right" href="/register" className="inline-block relative cursor-pointer transition-all duration-300 px-4 sm:px-6 py-3 rounded-lg text-white
