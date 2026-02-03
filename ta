@@ -1,0 +1,279 @@
+[33mcommit 584eea1a7177ca204c2e85bfe8a25ef64e781791[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Wed Feb 4 01:01:46 2026 +0800
+
+    trigger vercel
+
+[33mcommit 63708fa9f7057f98605aa3646c3c5b7a28857de9[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Wed Feb 4 00:55:58 2026 +0800
+
+    add text
+
+[33mcommit af8bb4c00dfa20d754b8ca3c9ca055b616bead6d[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Wed Feb 4 00:43:04 2026 +0800
+
+    add text
+
+[33mcommit b4eb6f6a759da5b1f3e40d94d8d9d4a72d485827[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Wed Feb 4 00:38:48 2026 +0800
+
+    add text
+
+[33mcommit bd9fe4d76c7438c0a6bd4161bb1e03c7fbba65a6[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Wed Feb 4 00:33:13 2026 +0800
+
+    fix
+
+[33mcommit 34fed471a8caeeea55e086ad9192b78864f9ee27[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Tue Feb 3 21:08:04 2026 +0800
+
+    add section quots
+
+[33mcommit afcd97de44966c5512c034293ddd96cb6643236b[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Tue Feb 3 21:07:50 2026 +0800
+
+    add section quots
+
+[33mcommit 55ae8b020725ffbb7ed2f54d22cf4dc5abb1b349[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Tue Feb 3 21:01:24 2026 +0800
+
+    add section how it works
+
+[33mcommit 0321c7d197a837b96f54840f294ee1838d003d46[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Tue Feb 3 19:19:58 2026 +0800
+
+    fix style
+
+[33mcommit 582fcb4ec418ff1a664bc7177bbc9dca80ccd446[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Tue Feb 3 19:18:28 2026 +0800
+
+    fix style
+
+[33mcommit 1efc27ad43b4ae91270a4c7a4c5ae29469252f81[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Tue Feb 3 19:16:52 2026 +0800
+
+    fix(style): heading
+
+[33mcommit 26db276a19b9b4cc4ebac4d99869041b59ebc927[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Tue Feb 3 18:58:37 2026 +0800
+
+    add title benefits
+
+[33mcommit 1704b113c009059ba78df0a5ee937373ecdfd51e[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Tue Feb 3 11:29:22 2026 +0800
+
+    add section contract
+
+[33mcommit 0e8d965479c92562229e2cd174813da2741bf892[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Tue Feb 3 11:25:32 2026 +0800
+
+    add section contract
+
+[33mcommit 5567eef5e8deb07634f10f475234c7b87e035ec4[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Mon Jan 26 01:53:30 2026 +0800
+
+    add wrap-break-word
+
+[33mcommit 2163a61b9ed1c2d6c8b98a770db8572f07f68a2c[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sun Jan 25 22:26:00 2026 +0800
+
+    add max width
+
+[33mcommit 4cedb94ddabf2f75e3904f264d0b25b9c4c39ebc[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sun Jan 25 21:35:31 2026 +0800
+
+    add max width
+
+[33mcommit 04b032e8529ade6d96d937d301046a8800b3c24f[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sun Jan 25 20:50:07 2026 +0800
+
+    add section founder
+
+[33mcommit ae5d77db2b89f1fd33a95f86e1dd703bfb0c311c[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sun Jan 25 14:20:52 2026 +0800
+
+    style(footer): update
+
+[33mcommit 5bf18d2bb94e5201e1f4691ac7ac2982af91263d[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sun Jan 25 14:17:22 2026 +0800
+
+    style(footer): uppdate
+
+[33mcommit 7c68dfc543f8c8a73935df6d7510a50ece2c3cf8[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sun Jan 25 07:43:02 2026 +0800
+
+    perf(route): see supplier Link
+
+[33mcommit 0f8a3dcd3141529ca22c99339774c2b3c0d8548e[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sun Jan 25 07:42:30 2026 +0800
+
+    perf(route): see supplier Link
+
+[33mcommit 7af2cb740177f653173f1b0473e814bf3c32a582[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sun Jan 25 07:40:11 2026 +0800
+
+    style(button): cta button
+
+[33mcommit 449196b5b0cac9269c42a93494f3238ae8a241c8[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sun Jan 25 07:38:47 2026 +0800
+
+    style(button): cta button
+
+[33mcommit 10226ed9d19c6856ccee5c9867149461e87b3583[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sun Jan 25 07:19:44 2026 +0800
+
+    add input phone
+
+[33mcommit 8c043badbf77620fae1a992c86985d33a8469d99[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sat Jan 24 23:13:39 2026 +0800
+
+    add input phone
+
+[33mcommit 717208b6a714908793f1f841d75c173f4c0d628d[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sat Jan 17 17:22:37 2026 +0800
+
+    add button
+
+[33mcommit 58cc18bad55a838179a5aac1aea5bbc50c18994a[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sat Jan 17 21:32:41 2026 +0800
+
+    change text
+
+[33mcommit 7cc2feb82429f59a95317f0f538b6d41d04d6b19[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sat Jan 17 21:11:34 2026 +0800
+
+    change ether should pay
+
+[33mcommit 945280cc789140cf62cb0d8ca557e22fb12b8022[m
+Merge: fc9f2c6 7a065e5
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sat Jan 17 21:01:40 2026 +0800
+
+    Merge branch 'master' of https://github.com/achmadfauzanhusain/supplyChainFarm-frontend
+
+[33mcommit fc9f2c6f33d6af5861a6a463090046458c9416fa[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sat Jan 17 21:01:12 2026 +0800
+
+    setup(config.json): sepolia test network
+
+[33mcommit 7a065e57401780f0e30a31c53b56046ed63dc364[m
+Author: fauzanchenko <79782055+achmadfauzanhusain@users.noreply.github.com>
+Date:   Sat Jan 17 04:13:11 2026 +0700
+
+    Update router
+
+[33mcommit 11714120a91cc3f36bce490cfbcf923361200a27[m
+Author: fauzanchenko <79782055+achmadfauzanhusain@users.noreply.github.com>
+Date:   Sat Jan 17 04:04:53 2026 +0700
+
+    Update overflow x
+
+[33mcommit 8fdf73d040eab5746ebeaeafa46bae6c93a24dfd[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sat Jan 17 04:43:49 2026 +0800
+
+    fix(animation): text
+
+[33mcommit 07a6b01baf71804926bd52ce3655a633bf896d25[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sat Jan 17 04:30:44 2026 +0800
+
+    add AOS animation
+
+[33mcommit 490224c58500ec9d7113b2e0fb12d33dab7d8e82[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sat Jan 17 04:21:51 2026 +0800
+
+    add basic animation
+
+[33mcommit d8eca7c775ba8b3e68f87a1dc77e4120cf16c52a[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Sat Jan 17 04:08:25 2026 +0800
+
+    add text
+
+[33mcommit 70ff75fec93f5ae7db289caa002081305173a0d0[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Fri Jan 16 15:34:19 2026 +0800
+
+    perf(routing): routing at button
+
+[33mcommit ff3a6b8ecf35ce4e3c97f562ed11d88d9425bfdb[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Fri Jan 16 15:26:09 2026 +0800
+
+    change txt
+
+[33mcommit 1c995279b96cf930b71fdc5cac55dbaacc586148[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Fri Jan 16 15:22:59 2026 +0800
+
+    change text
+
+[33mcommit 10ded363e65696814a32e77264bd1d5faf1fe370[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Thu Jan 15 23:57:31 2026 +0800
+
+    add .
+
+[33mcommit 4aa36138e50a270e7e0c9ceff62331409e47d5bf[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Thu Jan 15 23:40:51 2026 +0800
+
+    perf(text): change text
+
+[33mcommit 040611ac91c86f5d6f168b6feebebd4942273709[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Wed Jan 14 12:12:12 2026 +0800
+
+    style(address): calling supplier address for user can see it
+
+[33mcommit 6ef5e5a3f4ada8e720f1329396294276d177ccdc[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Tue Jan 13 19:13:38 2026 +0800
+
+    feat(qrcode): for user can scan it
+
+[33mcommit e5b1b7871b815c1629ff8ffb4d8a278f5e2cca81[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Tue Jan 13 12:49:16 2026 +0800
+
+    style(text): change text
+
+[33mcommit e68832206a4bb33aa9c8e30964f2fefd984f8e60[m
+Author: Fauzan Husain <achmadfauzan1340@gmail.com>
+Date:   Mon Jan 12 19:45:51 2026 +0800
+
+    style(wrap-break-word): add in className
+
+[33mcommit dc1279aa08e20485286d9f5171d8c1cd71454fdd[m
+Author: 
