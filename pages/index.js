@@ -167,7 +167,7 @@ export default function Home() {
         </div>
 
         <div className="mt-28 md:mt-32 text-center bg-blue-500 pt-4 pb-5">
-          <p data-aos="fade-up" className="text-2xl lg:text-3xl mt-4 font-bold">
+          <p data-aos="fade-left" className="text-xl lg:text-2xl mt-4 font-medium">
             {"Just 0.0005 ETH per ".split("").map((char, i) => (
               <span
                 key={`line1-${i}`}
