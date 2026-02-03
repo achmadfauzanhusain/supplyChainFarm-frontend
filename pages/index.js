@@ -227,7 +227,7 @@ export default function Home() {
                 </div>
               </div>
               <hr className="mt-8 md:hidden" />
-              <div className="mt-8 flex flex-col gap-4">
+              <div data-aos="fade-left" className="mt-8 flex flex-col gap-4">
                 <div data-aos="fade-left" className="bg-white/20 inline-block px-5 py-3 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
                   Consumer, Distributor etc
                 </div>
