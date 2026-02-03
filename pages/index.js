@@ -266,6 +266,18 @@ export default function Home() {
           </div>
         </div>
 
+        <div className="mt-28 md:mt-32 px-4 lg:px-18">
+          <div className="flex flex-col-reverse gap-8 md:gap-0 flex-col md:flex-row justify-evenly items-center">
+            <div data-aos="fade-right" className={`${urbanist.className} max-w-lg text-left`}>
+              <h1 className="text-3xl lg:text-4xl">“The enemy knows <br /> the system.”</h1>
+              <p className="text-3xl lg:text-4xl mt-4 font-bold">- Claude Shannon</p>
+            </div>
+            <div data-aos="fade-left">
+              <Image className="w-[350px] md:w-[400px]" src="/photo/shanon.jpg" width={400} height={400} alt="vitalik buterin" />
+            </div>
+          </div>
+        </div>
+
         {/* footer */}
         <div className="mt-32 md:mt-44 px-4 sm:px-8 lg:px-18">
           <div className="flex flex-col md:flex-row items-start justify-between gap-6 md:gap-0">
