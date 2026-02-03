@@ -267,7 +267,7 @@ export default function Home() {
         </div>
 
         <div className="mt-28 md:mt-32 px-4 lg:px-18">
-          <div className="flex flex-col-reverse gap-8 md:gap-0 flex-col md:flex-row justify-evenly items-center">
+          <div className="flex flex-col-reverse gap-8 md:gap-0 md:flex-row justify-evenly items-center">
             <div data-aos="fade-right" className={`${urbanist.className} max-w-lg text-left`}>
               <h1 className="text-3xl lg:text-4xl">“The enemy knows <br /> the system.”</h1>
               <p className="text-3xl lg:text-4xl mt-4 font-bold">- Claude Shannon</p>
