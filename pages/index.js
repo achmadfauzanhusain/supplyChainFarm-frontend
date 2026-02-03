@@ -167,7 +167,7 @@ export default function Home() {
         </div>
 
         <div className="mt-28 md:mt-32 text-center bg-blue-500 pt-4 pb-5">
-          <p data-aos="fade-left" className="text-xl lg:text-2xl mt-4 font-semibold">
+          <p data-aos="fade-left" className={`${urbanist.className} text-xl lg:text-2xl mt-4 font-bold`}>
             {"Just 0.0005 ETH per ".split("").map((char, i) => (
               <span
                 key={`line1-${i}`}
@@ -200,6 +200,45 @@ export default function Home() {
               </span>
             ))}
           </p>
+        </div>
+
+        <div className="mt-32 md:mt-44 text-center">
+          <h1 data-aos="fade-right" className={`${urbanist.className} text-3xl lg:text-4xl font-bold`}>How it Works?</h1>
+          <p className="mt-2 text-xs md:text-sm opacity-75">
+            High Level System Flow Diagram
+          </p>
+
+          <div className="inline-block">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+              <div className="mt-8 flex flex-col gap-4">
+                <div className="bg-white/20 inline-block px-5 py-3 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
+                  Supplier
+                </div>
+                ↓
+                <div className="bg-white/20 inline-block px-5 py-3 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
+                  Mint Product NFT
+                </div>
+                ↓
+                <div className="bg-white/20 inline-block px-5 py-3 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
+                  Blockchain (Immutable Record)
+                </div>
+              </div>
+              <hr className="mt-8 md:hidden" />
+              <div className="mt-8 flex flex-col gap-4">
+                <div className="bg-white/20 inline-block px-5 py-3 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
+                  Consumer, Distributor etc
+                </div>
+                ↓
+                <div className="bg-white/20 inline-block px-5 py-3 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
+                  Scan QR Code on Product
+                </div>
+                ↓
+                <div className="bg-white/20 inline-block px-5 py-3 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
+                  Product History Dashboard
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="mt-32 md:mt-44 text-center">
