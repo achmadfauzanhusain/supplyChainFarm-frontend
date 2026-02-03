@@ -101,7 +101,12 @@ export default function Home() {
         </div>
 
         <div className="mt-28 md:mt-32 px-4 sm:px-8 lg:px-18">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+          <h1 data-aos="fade-right" className={`${urbanist.className} text-4xl md:text-5xl font-bold bg-linear-to-r from-[#0D6EFD] bg-clip-text inline-block to-white text-transparent`}>See the Benefits</h1>
+          <p className="mt-2 text-xs md:text-sm opacity-75">
+            What are the benefits of using a decentralized supply chain?
+          </p>
+
+          <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-5">
             <div data-aos="fade-up" className="border border-white p-6 rounded-2xl cursor-pointer hover:border-[#0D6EFD] transition-all duration-300">
               <h3 className="text-sm md:text-base font-semibold">Increase Consumer Confidence</h3>
               <p className="text-xs md:text-sm opacity-75 mt-1">Consumers can see the origin of the product directly</p>
