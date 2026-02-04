@@ -202,7 +202,7 @@ const DetailProduct = () => {
                     )}
                 </div>
 
-                <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg wrap-break-word">
+                <Link href={`https://sepolia.etherscan.io/address/${product?.supplier}`} className="bg-[#BEE3F8]/25 hover:bg-[#BEE3F8]/35 py-3 md:py-4 px-2 md:px-3 rounded-lg wrap-break-word">
                     <h2 className="text-sm md:text-base font-bold">address supplier</h2>
                     {loadingProduct ? (
                         <div className="h-4 w-28 bg-gray-300 rounded animate-pulse mt-1"></div>
@@ -211,9 +211,9 @@ const DetailProduct = () => {
                             {product?.supplier}
                         </p>
                     )}
-                </div>
+                </Link>
 
-                <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg wrap-break-word">
+                <Link href={`https://sepolia.etherscan.io/address/${product?.currentHolder}`} className="bg-[#BEE3F8]/25 hover:bg-[#BEE3F8]/35 py-3 md:py-4 px-2 md:px-3 rounded-lg wrap-break-word">
                     <h2 className="text-sm md:text-base font-bold">current holder</h2>
                     {loadingProduct ? (
                         <div className="h-4 w-28 bg-gray-300 rounded animate-pulse mt-1"></div>
@@ -222,7 +222,7 @@ const DetailProduct = () => {
                             {product?.currentHolder}
                         </p>
                     )}
-                </div>
+                </Link>
             </div>
 
             <div className="mt-14">
