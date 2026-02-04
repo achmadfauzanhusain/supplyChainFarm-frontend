@@ -166,7 +166,7 @@ const DetailProduct = () => {
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 mt-5">
-                <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg">
+                <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg wrap-break-word">
                     <h2 className="text-sm md:text-base font-bold">quantity</h2>
                     {loadingProduct ? (
                         <div className="h-4 w-16 bg-gray-300 rounded animate-pulse mt-1"></div>
@@ -175,7 +175,7 @@ const DetailProduct = () => {
                     )}
                 </div>
 
-                <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg">
+                <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg wrap-break-word">
                     <h2 className="text-sm md:text-base font-bold">origin</h2>
                     {loadingProduct ? (
                         <div className="h-4 w-20 bg-gray-300 rounded animate-pulse mt-1"></div>
@@ -184,7 +184,7 @@ const DetailProduct = () => {
                     )}
                 </div>
 
-                <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg">
+                <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg wrap-break-word">
                     <h2 className="text-sm md:text-base font-bold">production date</h2>
                     {loadingMetadata ? (
                         <div className="h-4 w-24 bg-gray-300 rounded animate-pulse mt-1"></div>
@@ -193,7 +193,7 @@ const DetailProduct = () => {
                     )}
                 </div>
 
-                <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg">
+                <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg wrap-break-word">
                     <h2 className="text-sm md:text-base font-bold">current status</h2>
                     {loadingProduct ? (
                         <div className="h-4 w-20 bg-gray-300 rounded animate-pulse mt-1"></div>
@@ -202,24 +202,24 @@ const DetailProduct = () => {
                     )}
                 </div>
 
-                <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg">
+                <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg wrap-break-word">
                     <h2 className="text-sm md:text-base font-bold">address supplier</h2>
                     {loadingProduct ? (
                         <div className="h-4 w-28 bg-gray-300 rounded animate-pulse mt-1"></div>
                     ) : (
                         <p className="text-xs font-medium opacity-75">
-                            {product?.supplier?.slice(0, 6) + "..." + product?.supplier?.slice(38, 42)}
+                            {product?.supplier}
                         </p>
                     )}
                 </div>
 
-                <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg">
+                <div className="bg-[#BEE3F8]/25 py-3 md:py-4 px-2 md:px-3 rounded-lg wrap-break-word">
                     <h2 className="text-sm md:text-base font-bold">current holder</h2>
                     {loadingProduct ? (
                         <div className="h-4 w-28 bg-gray-300 rounded animate-pulse mt-1"></div>
                     ) : (
                         <p className="text-xs font-medium opacity-75">
-                            {product?.currentHolder?.slice(0, 6) + "..." + product?.currentHolder?.slice(38, 42)}
+                            {product?.currentHolder}
                         </p>
                     )}
                 </div>
