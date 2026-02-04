@@ -86,7 +86,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="mt-24">
+          <div data-aos="fade-left" className="mt-24">
             <p className="text-xs md:text-sm opacity-75">Food manufacturers • Logistics companies • Consumer</p>
           </div>
         </div>
