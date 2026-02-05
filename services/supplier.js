@@ -13,6 +13,14 @@ export async function registerSupplier(data) {
     })
 }
 
+export async function notRegisteredSuppliers() {
+    const url = `${ROOT_API}/${API_VERSION}/supplier/not-registered`;
+    return await callApi({
+        url,
+        method: "GET",
+    });
+}
+
 export async function registeredSuppliers() {
     const url = `${ROOT_API}/${API_VERSION}/supplier/registered`;
     return await callApi({
