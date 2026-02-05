@@ -9,6 +9,7 @@ import { BrowserProvider, Contract } from "ethers";
 import config from "@/config.json";
 import SupplyChainNFT from "../abis/SupplyChainNFT.json";
 
+import { notRegisteredSuppliers } from "@/services/supplier";
 import { getAddress } from "ethers";
 
 const Navbar = () => {
@@ -17,6 +18,7 @@ const Navbar = () => {
 
   const [contract, setContract] = useState(null);
   const [isVerifiedSupplier, setIsVerifiedSupplier] = useState(false);
+  const [isnVerfiedSuppliers, setIsnVerfiedSuppliers] = useState(false);
 
   const loadBlockchainData = async () => {
     const provider = new BrowserProvider(window.ethereum);
@@ -38,6 +40,22 @@ const Navbar = () => {
     } catch (err) {
       console.error("checkVerifiedSupplier error:", err);
       setIsVerifiedSupplier(false);
+    }
+  }
+
+  const checkNotVerifiedSuppliers = async (userAccount) => {
+    if (!userAccount) return
+
+    try {
+      const notVerifiedSuppliersList = await notRegisteredSuppliers()
+      const isNotVerified = notVerifiedSuppliersList.data.data.some(
+        supplier =>
+          supplier.ethWalletAddress.toLowerCase() === userAccount.toLowerCase()
+      )
+      setIsnVerfiedSuppliers(isNotVerified)
+    } catch (err) {
+      console.error("checkNotVerifiedSuppliers error:", err)
+      setIsnVerfiedSuppliers(false)
     }
   }
 
@@ -81,9 +99,59 @@ const Navbar = () => {
   useEffect(() => {
     if (account && contract) {
       checkVerifiedSupplier(account, contract)
+      checkNotVerifiedSuppliers(account)
     }
   }, [account, contract])
 
+  const renderSupplierStatusDesktop = () => {
+    if(isnVerfiedSuppliers) {
+      return (
+        <div className="bg-orange-400 px-4 py-2 rounded-md hover:bg-orange-500 cursor-not-allowed">
+          <h1>Being Processed!</h1>
+        </div>
+      )
+    } else if(isVerifiedSupplier) {
+      return (
+        <Link href="/mint">
+          <p className="text-[#38B2AC] font-semibold">{account.slice(0, 6) + '...' + account.slice(38, 42)}</p>
+        </Link>
+      )
+    } else {
+      return (
+        <Link href="/register" className="relative cursor-pointer transition-all duration-300 px-6 py-2 rounded-lg text-white 
+          bg-linear-to-r from-[#0D6EFD] to-blue-600
+          shadow-inner overflow-hidden
+          hover:from-blue-400 hover:to-blue-500
+          inset-shadow-sm inset-shadow-white/5"
+        >
+          <span className="relative z-10">Register</span>
+          <span className="absolute inset-0 bg-white opacity-20 blur-md translate-x-3 translate-y-3 rounded-lg"></span>
+        </Link>
+      )
+    }
+  }
+
+  const renderSupplierStatusMobile = () => {
+    if(isnVerfiedSuppliers) {
+      return (
+        <div className="bg-orange-400 p-2 rounded-md hover:bg-orange-500 cursor-not-allowed">
+          <h1>Being Processed!</h1>
+        </div>
+      )
+    } else if(isVerifiedSupplier) {
+      return (
+        <Link href="/mint">
+          <p className="p-2 rounded-lg bg-green-600/30 text-[#38B2AC] font-semibold">{account.slice(0, 6) + '...' + account.slice(38, 42)}</p>
+        </Link>
+      )
+    } else {
+      return (
+        <Link href="/register" className="p-2 rounded-lg hover:bg-white/20" onClick={() => setIsOpen(false)}>
+          Register
+        </Link>
+      )
+    }
+  }
 
   return (
     <div className="w-full text-white">
@@ -101,21 +169,7 @@ const Navbar = () => {
             Suppliers
           </Link>
 
-          {isVerifiedSupplier ? (
-            <Link href="/mint">
-              <p className="text-[#38B2AC] font-semibold">{account.slice(0, 6) + '...' + account.slice(38, 42)}</p>
-            </Link>
-          ) : (
-            <Link href="/register" className="relative cursor-pointer transition-all duration-300 px-6 py-2 rounded-lg text-white 
-                      bg-linear-to-r from-[#0D6EFD] to-blue-600
-                      shadow-inner overflow-hidden
-                      hover:from-blue-400 hover:to-blue-500
-                      inset-shadow-sm inset-shadow-white/5"
-            >
-              <span className="relative z-10">Register</span>
-              <span className="absolute inset-0 bg-white opacity-20 blur-md translate-x-3 translate-y-3 rounded-lg"></span>
-            </Link>
-          )}
+          {renderSupplierStatusDesktop()}
         </div>
 
         {/* Mobile Icon */}
@@ -156,15 +210,7 @@ const Navbar = () => {
             Suppliers
           </Link>
 
-          {isVerifiedSupplier ? (
-            <Link href="/mint">
-              <p className="p-2 rounded-lg bg-green-600/30 text-[#38B2AC] font-semibold">{account.slice(0, 6) + '...' + account.slice(38, 42)}</p>
-            </Link>
-          ) : (
-            <Link href="/register" className="p-2 rounded-lg hover:bg-white/20" onClick={() => setIsOpen(false)}>
-              Register
-            </Link>
-          )}
+          {renderSupplierStatusMobile()}
         </div>
       </div>
     </div>
