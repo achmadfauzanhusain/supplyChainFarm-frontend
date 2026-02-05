@@ -218,12 +218,12 @@ export default function Home() {
                 <div data-aos="fade-right" className="bg-white/20 inline-block px-5 py-3 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
                   Supplier
                 </div>
-                ↓
+                <span data-aos="fade-down">↓</span>
                 <div data-aos="fade-right" className="bg-white/20 inline-block px-5 py-3 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
                   Mint Product NFT
-                  </div>
-                  ↓
-                  <div data-aos="fade-right" className="bg-white/20 inline-block px-5 py-3 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
+                </div>
+                <span data-aos="fade-down">↓</span>
+                <div data-aos="fade-right" className="bg-white/20 inline-block px-5 py-3 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
                   Blockchain (Immutable Record)
                 </div>
               </div>
@@ -232,11 +232,11 @@ export default function Home() {
                 <div data-aos="fade-left" className="bg-white/20 inline-block px-5 py-3 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
                   Consumer, Distributor etc
                 </div>
-                ↓
+                <span data-aos="fade-down">↓</span>
                 <div data-aos="fade-left" className="bg-white/20 inline-block px-5 py-3 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
                   Scan QR Code on Product
                 </div>
-                ↓
+                <span data-aos="fade-down">↓</span>
                 <div data-aos="fade-left" className="bg-white/20 inline-block px-5 py-3 rounded-md cursor-pointer hover:bg-white/30 transition-all duration-300">
                   Product History Dashboard
                 </div>
