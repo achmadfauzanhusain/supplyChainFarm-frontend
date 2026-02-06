@@ -277,7 +277,7 @@ export default function Home() {
               <p className="text-3xl lg:text-4xl mt-4 font-bold">- Claude Shannon</p>
             </div>
             <div data-aos="fade-left">
-              <Image className="w-[350px] md:w-[400px]" src="/photo/shanon.jpg" width={400} height={400} alt="vitalik buterin" />
+              <Image className="w-[350px] md:w-[400px]" src="/photo/shanon.jpg" width={400} height={400} alt="claude shanon" />
             </div>
           </div>
         </div>
