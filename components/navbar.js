@@ -146,7 +146,7 @@ const Navbar = () => {
       )
     } else {
       return (
-        <Link href="/register" className="p-2 rounded-lg hover:bg-white/20" onClick={() => setIsOpen(false)}>
+        <Link href="/register" className="p-2 rounded-lg hover:bg-white/20 bg-linear-to-r from-[#0D6EFD] to-blue-600 hover:from-blue-400 hover:to-blue-500" onClick={() => setIsOpen(false)}>
           Register
         </Link>
       )
