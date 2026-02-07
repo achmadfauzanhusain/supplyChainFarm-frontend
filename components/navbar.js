@@ -22,11 +22,12 @@ const Navbar = () => {
 
   const loadBlockchainData = async () => {
     const provider = new BrowserProvider(window.ethereum);
+    const signer = await provider.getSigner();
     const network = await provider.getNetwork();
     const supplyChainNFT = new Contract(
       config[network.chainId].SupplyChainNFT.address,
       SupplyChainNFT,
-      provider
+      signer
     );
     setContract(supplyChainNFT);
   }
