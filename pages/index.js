@@ -28,7 +28,7 @@ export default function Home() {
           </h1>
           <h1
             data-aos="fade-left"
-            className={`${urbanist.className} text-4xl sm:text-5xl md:text-6xl font-bold leading-tight`}
+            className={`${urbanist.className} text-4xl sm:text-5xl md:text-6xl font-bold`}
           >
             {"Supply Chain For".split("").map((char, i) => (
               <span
