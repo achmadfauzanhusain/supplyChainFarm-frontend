@@ -111,27 +111,27 @@ export default function Home() {
           </p>
 
           <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-5">
-            <div data-aos="fade-up" className="border border-white p-6 rounded-2xl cursor-pointer hover:border-[#0D6EFD] transition-all duration-300">
+            <div data-aos="fade-up" className="border border-white p-4 md:p-5 rounded-2xl cursor-pointer hover:border-[#0D6EFD] transition-all duration-300">
               <h3 className="text-sm md:text-base font-semibold">Increase Consumer Confidence</h3>
               <p className="text-xs md:text-sm opacity-75 mt-1">Consumers can see the origin of the product directly</p>
             </div>
-            <div data-aos="fade-up" className="border border-white p-6 rounded-2xl cursor-pointer hover:border-[#0D6EFD] transition-all duration-300">
+            <div data-aos="fade-up" className="border border-white p-4 md:p-5 rounded-2xl cursor-pointer hover:border-[#0D6EFD] transition-all duration-300">
               <h3 className="text-sm md:text-base font-semibold">Preventing Product Counterfeiting</h3>
               <p className="text-xs md:text-sm opacity-75 mt-1">Counterfeiters cannot duplicate because each product has a unique NFT.</p>
             </div>
-            <div data-aos="fade-up" className="border border-white p-6 rounded-2xl cursor-pointer hover:border-[#0D6EFD] transition-all duration-300">
+            <div data-aos="fade-up" className="border border-white p-4 md:p-5 rounded-2xl cursor-pointer hover:border-[#0D6EFD] transition-all duration-300">
               <h3 className="text-sm md:text-base font-semibold">Improving Logistics Efficiency</h3>
               <p className="text-xs md:text-sm opacity-75 mt-1">Reduce administrative errors and verification time.</p>
             </div>
-            <div data-aos="fade-up" className="border border-white p-6 rounded-2xl cursor-pointer hover:border-[#0D6EFD] transition-all duration-300">
+            <div data-aos="fade-up" className="border border-white p-4 md:p-5 rounded-2xl cursor-pointer hover:border-[#0D6EFD] transition-all duration-300">
               <h3 className="text-sm md:text-base font-semibold">Easier Audits and Regulations</h3>
               <p className="text-xs md:text-sm opacity-75 mt-1">It is easier to conduct audits, especially for sensitive goods such as food, medicine, or agricultural products.</p>
             </div>
-            <div data-aos="fade-up" className="border border-white p-6 rounded-2xl cursor-pointer hover:border-[#0D6EFD] transition-all duration-300">
+            <div data-aos="fade-up" className="border border-white p-4 md:p-5 rounded-2xl cursor-pointer hover:border-[#0D6EFD] transition-all duration-300">
               <h3 className="text-sm md:text-base font-semibold">Environmental and Ethical Transparency</h3>
               <p className="text-xs md:text-sm opacity-75 mt-1">Helps company reputation and attracts sustainability-conscious consumers.</p>
             </div>
-            <div data-aos="fade-up" className="border border-white p-6 rounded-2xl cursor-pointer hover:border-[#0D6EFD] transition-all duration-300">
+            <div data-aos="fade-up" className="border border-white p-4 md:p-5 rounded-2xl cursor-pointer hover:border-[#0D6EFD] transition-all duration-300">
               <h3 className="text-sm md:text-base font-semibold">Enhances Trust and Collaboration Among Business Partners</h3>
               <p className="text-xs md:text-sm opacity-75 mt-1">Real-time shared data reduces conflicts and improves cooperation.</p>
             </div>
